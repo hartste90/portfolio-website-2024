@@ -48,7 +48,7 @@ const Writepad = (props:any) => {
                     ctx.save();
                     ctx.translate( position.x, position.y);
                     ctx.rotate( angle );
-                    ctx.fillStyle = "black";
+                    ctx.fillStyle = `rgb(79 70 229)`;
                     ctx.fillText(letter,0,0);
                     ctx.restore();
                 }
@@ -62,14 +62,14 @@ const Writepad = (props:any) => {
                 position.x = position.x + Math.cos(angle) * stepSize;
                 position.y = position.y + Math.sin(angle) * stepSize;
 
-                if(ctx !== null && ctx !== undefined)
-                {
-                    ctx.clearRect( 0, 0, 300, 100);
-                    ctx.font = "20px Georgia";
-                    ctx.fillStyle = "black";
-                    // ctx.fillText("MouseX: " + Math.round(position.x), 10, 50);
-                    // ctx.fillText("MouseY: " + Math.round(position.y), 10, 70);
-                }
+                // if(ctx !== null && ctx !== undefined)
+                // {
+                //     ctx.clearRect( 0, 0, 300, 100);
+                //     ctx.font = "20px Georgia";
+                //     ctx.fillStyle = "black";
+                //     // ctx.fillText("MouseX: " + Math.round(position.x), 10, 50);
+                //     // ctx.fillText("MouseY: " + Math.round(position.y), 10, 70);
+                // }
             
                 }
             }     

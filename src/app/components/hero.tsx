@@ -2,6 +2,23 @@ import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Writepad from './writepad'
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
+import { Separator } from '@/components/ui/separator'
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+import { Book, File, Github, Link, Linkedin, Mail, PanelLeftDashed, PanelLeftDashedIcon } from 'lucide-react'
+import Document from 'next/document'
+import SidePageLink from './side-page-link'
+import { Button } from '@/components/ui/button'
+import { useToast } from "@/components/ui/use-toast"
+import { Toaster } from '@/components/ui/toaster'
+
 
 const navigation = [
   { name: 'Services', href: '#' },
@@ -12,9 +29,14 @@ const navigation = [
 export default function Hero() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+  const { toast } = useToast()
+
   return (
-    <div className="bg-white">
-      <Writepad/>
+    <div className="bg-white">.
+    <Toaster/>
+
+      {/* <Writepad/> */}
+      
       <header className="inset-x-0 top-0 z-50">
         <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
@@ -45,17 +67,52 @@ export default function Hero() {
             ))}
           </div>
           <div className="lg:flex lg:flex-1 lg:justify-end ">
-            <a href="#" className="text-sm font-semibold leading-6 text-indigo-500 border-solid border-2 rounded-xl border-indigo-500 p-2 transition hover:text-white hover:bg-indigo-500">
+            <div className='z-10'>
+            <Sheet>
+              <SheetTrigger
+                className='text-sm font-semibold leading-6 text-indigo-500 border-solid border-2 rounded-xl border-indigo-500 p-2 transition hover:text-white hover:bg-indigo-500'
+              >Get in touch</SheetTrigger>
+              <SheetContent>
+                <SheetHeader>
+                <SheetTitle className='text-3xl text-indigo-600 my-4 pb-4 justify-center content-center'>
+                      Contact me..
+                  </SheetTitle>
+                  
+                  <Button onClick={() => {
+                    toast({
+                      description: "Email copied to clipboard!",
+                    });
+                    navigator.clipboard.writeText("steven.hart282@gmail.com");
+                  }}variant="outline" className='bg-indigo-600 text-white hover:text-indigo-600 hover:bg-indigo-100'>
+                    email:&nbsp;<span>steven.hart282@gmail.com</span>
+                  </Button>
+                  <SheetTitle className='pt-10 text-3xl text-indigo-600 my-4 pb-4 justify-center content-center'>
+                      ..Or look at my other resources
+                  </SheetTitle>
+                  <SidePageLink icon={<Github/>}
+                   title="Github"
+                   url="https://github.com/hartste90"/>
+                  <SidePageLink icon={<Linkedin/>}
+                   title="LinkedIn"
+                   url="https://www.linkedin.com/in/steven-hart-65458026/"/>
+                   <SidePageLink icon={<File/>}
+                   title="Resume"
+                   url="../documents/StevenHart-Resume.pdf"/>
+                </SheetHeader>
+              </SheetContent>
+            </Sheet>
+            </div>
+            {/* <a href="#" className="text-sm font-semibold leading-6 text-indigo-500 border-solid border-2 rounded-xl border-indigo-500 p-2 transition hover:text-white hover:bg-indigo-500">
               Book Now <span aria-hidden="true">&rarr;</span>
-            </a>
+            </a> */}
           </div>
         </nav>
         <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-          <div className="fixed inset-0 z-50" />
+          {/* <div className="fixed inset-0 z-50" /> */}
           <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
-                <span className="sr-only">Your Company</span>
+                <span className="sr-only">Steven Hart</span>
                 <img
                   className="h-8 w-auto"
                   src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
@@ -110,24 +167,27 @@ export default function Hero() {
             }}
           />
         </div>
-        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+        <div className="mx-auto max-w-2xl py-28">
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
             <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-              Announcing our next round of group trainings.{' '}
-              <a href="#" className="font-semibold text-indigo-600">
+              Hi I'm Steve.  A modern full-stack developer.{' '}
+              {/* <a href="#" className="font-semibold text-indigo-600">
                 <span className="absolute inset-0" aria-hidden="true" />
                 Read more <span aria-hidden="true">&rarr;</span>
-              </a>
+              </a> */}
             </div>
           </div>
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              Unleash your furry family's potential
+              I use code to create moments of delight and impact for users.
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              The best thing you can do for your pet is give them the training and confidence to be their best selves.  We empower dogs and their owners to build a strong bond based on trust, respect, and communication.
+              <span className="p-1 bg-emerald-200 highlight">
+                Click and drag below
+                </span> 
+               &nbsp;to help me write my story...
             </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
+            {/* <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
                 href="#"
                 className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
@@ -137,8 +197,27 @@ export default function Hero() {
               <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
                 Learn more <span aria-hidden="true">→</span>
               </a>
-            </div>
+            </div> */}
           </div>
+        </div>
+        <div className='shadow-2xl bg-emerald-500 border-[.1em] rounded-2xl'>
+          <Card className='py-10 pt-20'>
+            <Separator className='mx-[5%] w-[90%]'/>
+            <br/>
+            <br/>
+            <Separator className='mx-[5%] w-[90%]'/>
+            <br/>
+            <br/>
+            <Separator className='mx-[5%] w-[90%]'/>
+            <br/>
+            <br/>
+            <Separator className='mx-[5%] w-[90%]'/>
+            <br/>
+            <br/>
+            <Separator className='mx-[5%] w-[90%]'/>
+            <br/>
+            <br/>
+          </Card>
         </div>
         <div
           className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
@@ -153,7 +232,7 @@ export default function Hero() {
           />
         </div>
       </div>
-    
+     
     </div>
   )
 }

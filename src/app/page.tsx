@@ -30,7 +30,6 @@ const app = initializeApp(firebaseConfig);
 export default function Home() {
   return (
     <>
-    {/* <Writepad/> */}
     <Hero/>
     </>
     // <main className="flex min-h-screen flex-col items-center justify-between p-24">
