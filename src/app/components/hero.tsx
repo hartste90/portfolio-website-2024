@@ -12,8 +12,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import { Book, File, Github, Link, Linkedin, Mail, PanelLeftDashed, PanelLeftDashedIcon } from 'lucide-react'
-import Document from 'next/document'
+import { File, Github, Linkedin } from 'lucide-react'
 import SidePageLink from './side-page-link'
 import { Button } from '@/components/ui/button'
 import { useToast } from "@/components/ui/use-toast"
@@ -97,7 +96,7 @@ export default function Hero() {
                    url="https://www.linkedin.com/in/steven-hart-65458026/"/>
                    <SidePageLink icon={<File/>}
                    title="Resume"
-                   url="../documents/StevenHart-Resume.pdf"/>
+                   url="https://github.com/hartste90/portfolio-website-2024/blob/main/documents/StevenHart-Resume.pdf"/>
                 </SheetHeader>
               </SheetContent>
             </Sheet>
