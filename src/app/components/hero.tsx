@@ -4,6 +4,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Writepad from './writepad'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
+import logo from '@/../img/portraits/steve-profile-circle.png'
 import {
   Sheet,
   SheetContent,
@@ -19,15 +20,16 @@ import { useToast } from "@/components/ui/use-toast"
 import { Toaster } from '@/components/ui/toaster'
  
 const navigation = [
-  { name: 'Services', href: '#' },
-  { name: 'Reviews', href: '#' },
-  { name: 'Tips & Advice', href: '#' },
+  // { name: 'Services', href: '#' },
+  // { name: 'Reviews', href: '#' },
+  // { name: 'Tips & Advice', href: '#' },
 ]
 
 export default function Hero() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const { toast } = useToast()
+console.log("Logo: ", logo)
 
   return (
     <div className="bg-white">.
@@ -36,15 +38,10 @@ export default function Hero() {
       {/* <Writepad/> */}
       
       <header className="inset-x-0 top-0 z-50">
-        <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+        <nav className=" flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
-              <img
-                className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                alt=""
-              />
+              <span className="sr-only">Steve Hart</span>
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -65,14 +62,14 @@ export default function Hero() {
             ))}
           </div>
           <div className="lg:flex lg:flex-1 lg:justify-end ">
-            <div className='z-10'>
+            <div className='z-10 '>
             <Sheet>
               <SheetTrigger
                 className='text-sm font-semibold leading-6 text-indigo-500 border-solid border-2 rounded-xl border-indigo-500 p-2 transition hover:text-white hover:bg-indigo-500'
               >Get in touch</SheetTrigger>
               <SheetContent>
                 <SheetHeader>
-                <SheetTitle className='text-3xl text-indigo-600 my-4 pb-4 justify-center content-center'>
+                <SheetTitle className='text-xl text-indigo-600 my-4 pb-4 justify-center content-center'>
                       Contact me..
                   </SheetTitle>
                   
@@ -84,8 +81,8 @@ export default function Hero() {
                   }}variant="outline" className='bg-indigo-600 text-white hover:text-indigo-600 hover:bg-indigo-100'>
                     email:&nbsp;<span>steven.hart282@gmail.com</span>
                   </Button>
-                  <SheetTitle className='pt-10 text-3xl text-indigo-600 my-4 pb-4 justify-center content-center'>
-                      ..Or look at my other resources
+                  <SheetTitle className='pt-10 text-xl text-indigo-600 my-4 pb-4 justify-center content-center'>
+                      ..or look at my other resources
                   </SheetTitle>
                   <SidePageLink icon={<Github/>}
                    title="Github"
@@ -106,15 +103,14 @@ export default function Hero() {
           </div>
         </nav>
         <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-          {/* <div className="fixed inset-0 z-50" /> */}
           <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">Steven Hart</span>
                 <img
                   className="h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                  alt=""
+                  src="/Users/stevehart/Documents/workspace/portfolio-website-2024/img/portraits/steve-profile.jpg"
+                  alt="Steve Hart"
                 />
               </a>
               <button
@@ -166,6 +162,11 @@ export default function Hero() {
           />
         </div>
         <div className="mx-auto max-w-2xl py-28">
+        <img
+                className="w-auto h-60 circle mx-auto rounded-full p-1.5"
+                src={logo.src}
+                alt=""
+              />
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
             <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
               Hi I'm Steve.  A modern full-stack developer.{' '}
