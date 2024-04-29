@@ -19,11 +19,11 @@ import { Button } from '@/components/ui/button'
 import { useToast } from "@/components/ui/use-toast"
 import { Toaster } from '@/components/ui/toaster'
  
-const navigation = [
-  // { name: 'Services', href: '#' },
-  // { name: 'Reviews', href: '#' },
-  // { name: 'Tips & Advice', href: '#' },
-]
+// const navigation = [
+//   { name: 'Services', href: '#' },
+//   { name: 'Reviews', href: '#' },
+//   { name: 'Tips & Advice', href: '#' },
+// ]
 
 export default function Hero() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -54,18 +54,19 @@ console.log("Logo: ", logo)
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
-          <div className="hidden lg:flex lg:gap-x-12">
+          {/* Navigation Menu */}
+          {/* <div className="hidden lg:flex lg:gap-x-12">
             {navigation.map((item) => (
               <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
                 {item.name}
               </a>
             ))}
-          </div>
+          </div> */}
           <div className="lg:flex lg:flex-1 lg:justify-end ">
             <div className='z-10 '>
             <Sheet>
               <SheetTrigger
-                className='text-sm font-semibold leading-6 text-indigo-500 border-solid border-2 rounded-xl border-indigo-500 p-2 transition hover:text-white hover:bg-indigo-500'
+                className='text-sm font-semibold leading-6 text-indigo-500 border-solid border-2 rounded-xl border-indigo-500 p-2 hover:text-white hover:bg-indigo-500 transition duration-300'
               >Get in touch</SheetTrigger>
               <SheetContent>
                 <SheetHeader>
@@ -78,7 +79,7 @@ console.log("Logo: ", logo)
                       description: "Email copied to clipboard!",
                     });
                     navigator.clipboard.writeText("steven.hart282@gmail.com");
-                  }}variant="outline" className='bg-indigo-600 text-white hover:text-indigo-600 hover:bg-indigo-100'>
+                  }}variant="outline" className='bg-indigo-600 text-white hover:text-indigo-600 hover:bg-indigo-100 transition duration-300'>
                     email:&nbsp;<span>steven.hart282@gmail.com</span>
                   </Button>
                   <SheetTitle className='pt-10 text-xl text-indigo-600 my-4 pb-4 justify-center content-center'>
@@ -125,7 +126,7 @@ console.log("Logo: ", logo)
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
-                  {navigation.map((item) => (
+                  {/* {navigation.map((item) => (
                     <a
                       key={item.name}
                       href={item.href}
@@ -133,8 +134,8 @@ console.log("Logo: ", logo)
                     >
                       {item.name}
                     </a>
-                  ))}
-                </div>
+                  ))*/}
+                </div> 
                 <div className="py-6">
                   <a
                     href="#"
@@ -150,17 +151,25 @@ console.log("Logo: ", logo)
       </header>
       <div className="relative isolate px-6 pt-14 lg:px-8">
         <div
-          className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+          className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden  sm:-top-80"
           aria-hidden="true"
         >
+          <div className='rotate animate-spin-slow blur-2xl'>
           <div
-            className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-            style={{
-              clipPath:
-                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-            }}
+            // className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2  bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem] blob1 blur-3xl"
+            className=" aspect-[1155/678] w-[36.125rem] -translate-x-1/2  bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem] blob1"
+
           />
+          </div>
+          <div className='rotate animate-spin-slow blur-2xl'>
+          <div
+            // className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2  bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem] blob1 blur-3xl"
+            className=" aspect-[1155/678] w-[36.125rem] -translate-x-1/2  bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem] blob1"
+
+          />
+          </div>
         </div>
+        
         <div className="mx-auto max-w-2xl py-28">
         <img
                 className="w-auto h-60 circle mx-auto rounded-full p-1.5"
@@ -217,18 +226,6 @@ console.log("Logo: ", logo)
             <br/>
             <br/>
           </Card>
-        </div>
-        <div
-          className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-          aria-hidden="true"
-        >
-          <div
-            className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
-            style={{
-              clipPath:
-                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-            }}
-          />
         </div>
       </div>
      

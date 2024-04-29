@@ -17,7 +17,7 @@ const SidePageLink: React.FC<SidePageLinkProps> = ({
 }) => {
     return (
         <>
-            <SheetDescription className="p-3 my-2 text-indigo-600 text-md hover:bg-indigo-600 hover:text-white">
+            <SheetDescription className="p-3 my-2 text-indigo-600 text-md hover:bg-indigo-600 hover:text-white transition duration-300">
                 <div className='flex'>
                     {icon}
                   <a target='_blank' className="mx-4"href={url}>{title}</a>               
