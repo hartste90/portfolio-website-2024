@@ -2,11 +2,9 @@
 
 import Image from "next/image";
 
-// Import the functions you need from the SDKs you need
+/// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import Hero from "./components/hero";
-import Writepad from "./components/writepad";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -18,14 +16,13 @@ const firebaseConfig = {
   projectId: "kate-hart-dog-training-website",
   storageBucket: "kate-hart-dog-training-website.appspot.com",
   messagingSenderId: "59156584213",
-  appId: "1:59156584213:web:cadce3e4e20af0d7afbb1c",
-  measurementId: "G-PFG0NZ89VN"
+  appId: "1:59156584213:web:15b969dfcf936d5eafbb1c",
+  measurementId: "G-VVVC5MHVVT"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
-// console.log("Initialized Firebase");
+const analytics = getAnalytics(app);
 
 export default function Home() {
   return (
