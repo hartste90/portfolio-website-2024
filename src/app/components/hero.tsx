@@ -5,6 +5,7 @@ import Writepad from './writepad'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 import logo from '@/../img/portraits/steve-profile-circle.png'
+import "../globals.css"
 import {
   Sheet,
   SheetContent,
@@ -33,10 +34,8 @@ console.log("Logo: ", logo)
 
   return (
     <div className="bg-white">.
-    <Toaster/>
-
-      {/* <Writepad/> */}
-      
+    <Toaster/>      
+    
       <header className="inset-x-0 top-0 z-50">
         <nav className=" flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
@@ -190,10 +189,10 @@ console.log("Logo: ", logo)
               I use code to create moments of delight and impact for users.
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              <span className="p-1 bg-emerald-200 highlight">
-                Click and drag below
+            Click and drag below&nbsp;to help me <span className="p-1 italic bg-indigo-200 highlight">
+            write my story...
                 </span> 
-               &nbsp;to help me write my story...
+               
             </p>
             {/* <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
@@ -207,25 +206,20 @@ console.log("Logo: ", logo)
               </a>
             </div> */}
           </div>
+          
         </div>
-        <div className='shadow-2xl bg-emerald-500 border-[.1em] rounded-2xl'>
-          <Card className='py-10 pt-20'>
-            <Separator className='mx-[5%] w-[90%]'/>
-            <br/>
-            <br/>
-            <Separator className='mx-[5%] w-[90%]'/>
-            <br/>
-            <br/>
-            <Separator className='mx-[5%] w-[90%]'/>
-            <br/>
-            <br/>
-            <Separator className='mx-[5%] w-[90%]'/>
-            <br/>
-            <br/>
-            <Separator className='mx-[5%] w-[90%]'/>
-            <br/>
-            <br/>
-          </Card>
+
+        <div className="notepad m-10">
+          <div className="top"></div>
+          <div id="canvasParent" className="paper">
+          <Writepad className="absolute z-10"/>
+          </div>
+        </div>
+        
+        
+        <div
+          className='h-8'>
+
         </div>
       </div>
      

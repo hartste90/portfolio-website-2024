@@ -3,7 +3,8 @@ import {useEffect, useRef} from 'react';
 const Writepad = (props:any) => {
 
     // Application variables
-    var position = {x: 0, y: window.innerHeight/2};
+    // var position = {x: 0, y: window.innerHeight/2};
+    var position: { x: any; y: any; };
     var counter = 0;
     var minFontSize = 10;
     var angleDistortion = 0;
@@ -11,66 +12,59 @@ const Writepad = (props:any) => {
 
 
     const ref = useRef();
-    console.log("Ref: " + ref);
     var canvas: any;
     var ctx: CanvasRenderingContext2D | null | undefined;
     var mouse = {x: 0, y: 0, down: false}
 
     useEffect(() => {
-        console.log("Using effect");
         canvas = ref.current;
         ctx = canvas?.getContext("2d");
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        
+        resizeCanvas();
 
         function mouseMove ( event:any ){
-            mouse.x = event.pageX;
-            mouse.y = event.pageY;
+
+            var rect = canvas.getBoundingClientRect();
+            mouse.x = event.clientX - rect.left,
+            mouse.y = event.clientY - rect.top
             draw(event);
         }
           
         function draw(event:any) {
             if ( mouse.down ) {
                 var d = distance( position, mouse );
+                console.log("distance: " + d)
                 var fontSize = minFontSize + d/2;
                 var letter = letters[counter];
                 var stepSize = textWidth( letter, fontSize );
                 
+                console.log("stepsize: " + stepSize + " d: " + d);
 
-                if (stepSize !== undefined && d > stepSize) {
-                var angle = Math.atan2(mouse.y-position.y, mouse.x-position.x);
+                if (stepSize !== undefined && d > stepSize) 
+                    {
+                    var angle = Math.atan2(mouse.y-position.y, mouse.x-position.x);
+                    
+
+                    console.log("CTX: " + ctx);
+                    if(ctx !== null && ctx !== undefined)
+                    {
+                        console.log("drawing: " +  letter)
+                        ctx.font = fontSize + "px Georgia";
+                        ctx.save();
+                        ctx.translate( position.x, position.y);
+                        ctx.rotate( angle );
+                        ctx.fillStyle = `rgb(79 70 229)`;
+                        ctx.fillText(letter,0,0);
+                        ctx.restore();
+                    }
                 
-
-                if(ctx !== null && ctx !== undefined)
-                {
-                    ctx.font = fontSize + "px Georgia";
-                    ctx.save();
-                    ctx.translate( position.x, position.y);
-                    ctx.rotate( angle );
-                    ctx.fillStyle = `rgb(79 70 229)`;
-                    ctx.fillText(letter,0,0);
-                    ctx.restore();
-                }
-            
-                counter++;
-                if (counter > letters.length-1) {
-                    counter = 0;
-                }
-                
-                //console.log (position.x + Math.cos( angle ) * stepSize)
-                position.x = position.x + Math.cos(angle) * stepSize;
-                position.y = position.y + Math.sin(angle) * stepSize;
-
-                // if(ctx !== null && ctx !== undefined)
-                // {
-                //     ctx.clearRect( 0, 0, 300, 100);
-                //     ctx.font = "20px Georgia";
-                //     ctx.fillStyle = "black";
-                //     // ctx.fillText("MouseX: " + Math.round(position.x), 10, 50);
-                //     // ctx.fillText("MouseY: " + Math.round(position.y), 10, 70);
-                // }
-            
+                    counter++;
+                    if (counter > letters.length-1) {
+                        counter = 0;
+                    }
+                    
+                    console.log (position.x + Math.cos( angle ) * stepSize)
+                    position.x = position.x + Math.cos(angle) * stepSize;
+                    position.y = position.y + Math.sin(angle) * stepSize;                
                 }
             }     
         }
@@ -89,11 +83,16 @@ const Writepad = (props:any) => {
         }
         
         function mouseDown( event:any ){
-        mouse.down = true;
-        position.x = event.pageX;
-        position.y = event.pageY;
-        
-        // document.getElementById('info').style.display = 'none';
+            mouse.down = true;
+            var rect = canvas.getBoundingClientRect();
+            mouse.x = (event.clientX - rect.left),
+            mouse.y = event.clientY - rect.top
+            if (position === undefined || position === null)
+            {
+                position = {x: mouse.x, y: mouse.y};
+            }
+            position.x = mouse.x;
+            position.y = mouse.y;
         }
         
         function mouseUp( event:any ){
@@ -101,7 +100,7 @@ const Writepad = (props:any) => {
         }
         
         function doubleClick( event:any ) {
-        canvas.width = canvas.width; 
+        // canvas.width = canvas.width; 
         }
           
           function textWidth( string:any, size:any ) {
@@ -114,24 +113,30 @@ const Writepad = (props:any) => {
     };
 
         canvas.addEventListener('mousemove', mouseMove, false);
-        console.log("added event listener");
         canvas.addEventListener('mousedown', mouseDown, false);
         canvas.addEventListener('mouseup',   mouseUp,   false);
         canvas.addEventListener('mouseout',  mouseUp,  false);  
         canvas.addEventListener('dblclick',  doubleClick, false);
     
         window.onresize = function(event) {
-            console.log("resizing window: "+ window.innerWidth + ", " + window.innerHeight);
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            if(ctx !== null && ctx !== undefined)
+                {
+                    ctx.clearRect( 0, 0, window.innerWidth, window.innerHeight);
+                    
+                }
+            resizeCanvas();
           }
 
-        if(ctx !== null && ctx !== undefined)
+        function resizeCanvas()
         {
-            
-        }
-        else{
-            console.log("context is bad");
+            var canvasParent = document.getElementById("canvasParent")
+            if (canvasParent != null)
+            {
+                var cs     = getComputedStyle(canvasParent);
+                canvas.width  = parseInt( cs.getPropertyValue('width'), 10);
+                canvas.height = parseInt( cs.getPropertyValue('height'), 10);
+            }
+        
         }
 
     },[]);
@@ -139,7 +144,7 @@ const Writepad = (props:any) => {
 
     return (
         <>
-        <canvas ref={ref} className='absolute z-10' {...props}/>
+        <canvas id="writepad" ref={ref} {...props}/>
         </>
     )
 }
