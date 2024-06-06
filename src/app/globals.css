@@ -116,3 +116,21 @@
   outline: 0;
   font-size: 22px;
 }
+
+.hero-main-text {
+  display: inline-block;
+  text-shadow: 3px 3px #558ABB;
+}
+
+.hero-main-char {
+  display: inline-block;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  
+}
+
+.hero-main-char:hover {
+  
+  transform: translateY(5px);
+}

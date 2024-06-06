@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { JSX, useState } from 'react'
 import { Dialog } from '@headlessui/react'
+
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Writepad from './writepad'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
@@ -30,7 +31,17 @@ export default function Hero() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const { toast } = useToast()
-console.log("Logo: ", logo)
+
+  function createHeroMainText()
+  {
+    const heroMainText = "I use code to create moments of delight and impact for users."
+    let heroMainTextArray: JSX.Element[] = [];
+    heroMainText.split(" ").map((char) => {
+      heroMainTextArray.push(<a className='hero-main-char'>{char}</a>);      
+      heroMainTextArray.push(<span>&nbsp;</span>)
+    });
+    return heroMainTextArray;
+  }
 
   return (
     <div className="bg-white">.
@@ -185,11 +196,11 @@ console.log("Logo: ", logo)
             </div>
           </div>
           <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              I use code to create moments of delight and impact for users.
+            <h1 className="hero-main-text text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+              {createHeroMainText()}
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-            Click and drag below&nbsp;to help me <span className="p-1 italic bg-indigo-200 highlight">
+            Click and drag on the paper below&nbsp;to help me <span className="p-1 italic bg-indigo-200 highlight">
             write my story...
                 </span> 
                
