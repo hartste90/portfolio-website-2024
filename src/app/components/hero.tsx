@@ -1,5 +1,6 @@
 import { JSX, useState } from 'react'
 import { Dialog } from '@headlessui/react'
+import "animate.css/animate.compat.css"
 
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Writepad from './writepad'
@@ -20,6 +21,9 @@ import SidePageLink from './side-page-link'
 import { Button } from '@/components/ui/button'
 import { useToast } from "@/components/ui/use-toast"
 import { Toaster } from '@/components/ui/toaster'
+import ScrollAnimation from 'react-animate-on-scroll'
+// import { ScrollAnimation } from 'react-animate-on-scroll'
+
  
 // const navigation = [
 //   { name: 'Services', href: '#' },
@@ -36,8 +40,14 @@ export default function Hero() {
   {
     const heroMainText = "I use code to create moments of delight and impact for users."
     let heroMainTextArray: JSX.Element[] = [];
-    heroMainText.split(" ").map((char) => {
-      heroMainTextArray.push(<a className='hero-main-char'>{char}</a>);      
+    heroMainText.split(" ").map((word) => {
+      if(word === 'delight')
+      {
+        heroMainTextArray.push(<a className='hero-main-char hero-main-char-special'>{word}</a>);
+      }
+      else{
+        heroMainTextArray.push(<a className='hero-main-char'>{word}</a>);      
+      }
       heroMainTextArray.push(<span>&nbsp;</span>)
     });
     return heroMainTextArray;
@@ -233,7 +243,16 @@ export default function Hero() {
 
         </div>
       </div>
-     
+      <ScrollAnimation className="py-[300px] bg-purple-300" animateIn="fadeInLeft" animateOnce={true} >
+        some text
+        </ScrollAnimation>
+        <ScrollAnimation className="py-[300px] bg-purple-500" animateIn="fadeInRight" animateOnce={true} >
+          other text
+          </ScrollAnimation>
+     <div className="bg-blue-500 py-[300px]">
+      
+      </div>
     </div>
+    
   )
 }

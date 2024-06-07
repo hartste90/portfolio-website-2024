@@ -129,6 +129,9 @@
   transition-duration: 150ms;
   
 }
+.hero-main-char-special {
+  text-shadow: auto #8d03ff;
+}
 
 .hero-main-char:hover {
   
