@@ -22,7 +22,7 @@ import { Button } from '@/components/ui/button'
 import { useToast } from "@/components/ui/use-toast"
 import { Toaster } from '@/components/ui/toaster'
 import ScrollAnimation from 'react-animate-on-scroll'
-// import { ScrollAnimation } from 'react-animate-on-scroll'
+import Section from '@/app/components/section'
 
  
 // const navigation = [
@@ -190,7 +190,7 @@ export default function Hero() {
           </div>
         </div>
         
-        <div className="mx-auto max-w-2xl py-28">
+        <div className="mx-auto max-w-2xl pt-28 pb-10 ">
         <img
                 className="w-auto h-60 circle mx-auto rounded-full p-1.5"
                 src={logo.src}
@@ -213,24 +213,11 @@ export default function Hero() {
             Click and drag on the paper below&nbsp;to help me <span className="p-1 italic bg-indigo-200 highlight">
             write my story...
                 </span> 
-               
             </p>
-            {/* <div className="mt-10 flex items-center justify-center gap-x-6">
-              <a
-                href="#"
-                className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
-                Book Now
-              </a>
-              <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                Learn more <span aria-hidden="true">→</span>
-              </a>
-            </div> */}
           </div>
-          
         </div>
 
-        <div className="notepad m-10">
+        <div className="notepad mx-10">
           <div className="top"></div>
           <div id="canvasParent" className="paper">
           <Writepad className="absolute z-10"/>
@@ -243,9 +230,22 @@ export default function Hero() {
 
         </div>
       </div>
-      <ScrollAnimation className="py-[300px] bg-purple-300" animateIn="fadeInLeft" animateOnce={true} >
-        some text
-        </ScrollAnimation>
+      {/* <ScrollAnimation className="py-[300px]" animateIn="fadeInLeft" animateOnce={true} > */}
+        <Section className="w-screen py-[300px] inline-flex justify-center items-center">
+          <ScrollAnimation animateIn='fadeInLeft' animateOnce={true} delay={100}>
+        <div className='w-64 h-64 bg-blue-300 rounded-xl mx-5'>
+          </div>
+          </ScrollAnimation>
+          <ScrollAnimation animateIn='fadeInLeft' animateOnce={true} delay={200}>
+          <div className='w-64 h-64 bg-blue-300 rounded-xl mx-5'>
+          </div>
+          </ScrollAnimation>
+          <ScrollAnimation animateIn='fadeInLeft' animateOnce={true} delay={300}>
+          <div className='w-64 h-64 bg-blue-300 rounded-xl mx-5'>
+          </div>
+          </ScrollAnimation>
+        </Section>
+        {/* </ScrollAnimation> */}
         <ScrollAnimation className="py-[300px] bg-purple-500" animateIn="fadeInRight" animateOnce={true} >
           other text
           </ScrollAnimation>
