@@ -6,6 +6,9 @@ import Image from "next/image";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import Hero from "./components/hero";
+import { Toaster } from "@/components/ui/toaster";
+import Tools from "./components/tools";
+import Projects from "./components/projects";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -28,6 +31,13 @@ export default function Home() {
   return (
     <>
     <Hero/>
+    <Tools/>
+    <Projects/>
+    <footer className="flex items-center justify-center w-full h-24 py-20">
+      <a>
+        this website was handcrafted by <b>Steve Hart</b>
+      </a>
+      </footer>
     </>
   );
 }

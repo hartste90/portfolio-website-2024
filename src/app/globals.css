@@ -122,18 +122,31 @@
   text-shadow: 3px 3px #558ABB;
 }
 
-.hero-main-char {
+.lift-on-hover {
   display: inline-block;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
   
 }
-.hero-main-char-special {
-  text-shadow: auto #8d03ff;
+
+.lift-on-hover:hover {
+  transform: translateY(5px);
 }
 
-.hero-main-char:hover {
-  
-  transform: translateY(5px);
+.button-hover {
+  transition: all 0.3s ease;
+  background-position: 0 0;
+  background-size: 200%;
+}
+
+.button-hover:hover {
+  background-position: 100% 100%;
+}
+
+.section {
+  -webkit-clip-path:polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
+  clip-path:polygon(0 0, 100% 10%, 100% 90%, 0% 100%);
+  justify-content: center;
+  height: 100vh;
 }

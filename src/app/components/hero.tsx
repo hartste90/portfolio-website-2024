@@ -23,6 +23,7 @@ import { useToast } from "@/components/ui/use-toast"
 import { Toaster } from '@/components/ui/toaster'
 import ScrollAnimation from 'react-animate-on-scroll'
 import Section from '@/app/components/section'
+import { responsiveHoverText } from './responsive-hover-text'
 
  
 // const navigation = [
@@ -36,29 +37,10 @@ export default function Hero() {
 
   const { toast } = useToast()
 
-  function createHeroMainText()
-  {
-    const heroMainText = "I use code to create moments of delight and impact for users."
-    let heroMainTextArray: JSX.Element[] = [];
-    heroMainText.split(" ").map((word) => {
-      if(word === 'delight')
-      {
-        heroMainTextArray.push(<a className='hero-main-char hero-main-char-special'>{word}</a>);
-      }
-      else{
-        heroMainTextArray.push(<a className='hero-main-char'>{word}</a>);      
-      }
-      heroMainTextArray.push(<span>&nbsp;</span>)
-    });
-    return heroMainTextArray;
-  }
-
   return (
-    <div className="bg-white">.
-    <Toaster/>      
-    
+    <div className="bg-white">
       <header className="inset-x-0 top-0 z-50">
-        <nav className=" flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+        <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Steve Hart</span>
@@ -83,10 +65,10 @@ export default function Hero() {
             ))}
           </div> */}
           <div className="lg:flex lg:flex-1 lg:justify-end ">
-            <div className='z-10 '>
+            <div className='z-10'>
             <Sheet>
               <SheetTrigger
-                className='text-sm font-semibold leading-6 text-indigo-500 border-solid border-2 rounded-xl border-indigo-500 p-2 hover:text-white hover:bg-indigo-500 transition duration-300'
+                className='button-hover text-md font-semibold leading-6 bg-gradient-to-r from-pink-500 to-indigo-500 text-white rounded-full p-4 px-8 transition-all duration-300'
               >Get in touch</SheetTrigger>
               <SheetContent>
                 <SheetHeader>
@@ -99,7 +81,7 @@ export default function Hero() {
                       description: "Email copied to clipboard!",
                     });
                     navigator.clipboard.writeText("steven.hart282@gmail.com");
-                  }}variant="outline" className='bg-indigo-600 text-white hover:text-indigo-600 hover:bg-indigo-100 transition duration-300'>
+                  }}variant="outline" className='bg-indigo-600 text-white shadow-sm hover:text-indigo-600 hover:bg-indigo-100 transition duration-300'>
                     email:&nbsp;<span>steven.hart282@gmail.com</span>
                   </Button>
                   <SheetTitle className='pt-10 text-xl text-indigo-600 my-4 pb-4 justify-center content-center'>
@@ -189,70 +171,41 @@ export default function Hero() {
           />
           </div>
         </div>
-        
-        <div className="mx-auto max-w-2xl pt-28 pb-10 ">
-        <img
-                className="w-auto h-60 circle mx-auto rounded-full p-1.5"
-                src={logo.src}
-                alt=""
-              />
-          <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-            <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-              Hi I'm Steve.  A modern full-stack developer.{' '}
-              {/* <a href="#" className="font-semibold text-indigo-600">
-                <span className="absolute inset-0" aria-hidden="true" />
-                Read more <span aria-hidden="true">&rarr;</span>
-              </a> */}
-            </div>
-          </div>
-          <div className="text-center">
-            <h1 className="hero-main-text text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              {createHeroMainText()}
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-            Click and drag on the paper below&nbsp;to help me <span className="p-1 italic bg-indigo-200 highlight">
-            write my story...
-                </span> 
-            </p>
-          </div>
-        </div>
+            <div className="mx-auto max-w-2xl pt-28 pb-10 fade">
+            <img
+                    className="w-auto h-60 circle mx-auto rounded-full p-1.5"
+                    src={logo.src}
+                    alt=""
+                  />
+              <div className="hidden sm:mb-8 sm:flex sm:justify-center">
+                <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                  Hi I'm Steve.  A modern full-stack developer.{' '}
+                  {/* <a href="#" className="font-semibold text-indigo-600">
+                    <span className="absolute inset-0" aria-hidden="true" />
+                    Read more <span aria-hidden="true">&rarr;</span>
+                  </a> */}
+                </div>
+              </div>
+              <div className="text-center">
+                <h1 className="hero-main-text text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                  {responsiveHoverText("I use code to create moments of impact and delight.")}
+                </h1>
+                <p className="mt-6 text-lg leading-8 text-gray-600">
+                Click and drag on the paper below&nbsp;to help me <span className="p-1 italic bg-indigo-200 highlight">
+                write my story...
+                    </span> 
+                </p>
+              </div>
+            </div>  
 
-        <div className="notepad mx-10">
+        <div className="notepad mx-20">
           <div className="top"></div>
-          <div id="canvasParent" className="paper">
-          <Writepad className="absolute z-10"/>
+          <div id="canvasParent" className="paper mb-40">
+            <Writepad className="absolute z-10"/>
           </div>
         </div>
-        
-        
-        <div
-          className='h-8'>
-
-        </div>
       </div>
-      {/* <ScrollAnimation className="py-[300px]" animateIn="fadeInLeft" animateOnce={true} > */}
-        <Section className="w-screen py-[300px] inline-flex justify-center items-center">
-          <ScrollAnimation animateIn='fadeInLeft' animateOnce={true} delay={100}>
-        <div className='w-64 h-64 bg-blue-300 rounded-xl mx-5'>
-          </div>
-          </ScrollAnimation>
-          <ScrollAnimation animateIn='fadeInLeft' animateOnce={true} delay={200}>
-          <div className='w-64 h-64 bg-blue-300 rounded-xl mx-5'>
-          </div>
-          </ScrollAnimation>
-          <ScrollAnimation animateIn='fadeInLeft' animateOnce={true} delay={300}>
-          <div className='w-64 h-64 bg-blue-300 rounded-xl mx-5'>
-          </div>
-          </ScrollAnimation>
-        </Section>
-        {/* </ScrollAnimation> */}
-        <ScrollAnimation className="py-[300px] bg-purple-500" animateIn="fadeInRight" animateOnce={true} >
-          other text
-          </ScrollAnimation>
-     <div className="bg-blue-500 py-[300px]">
-      
       </div>
-    </div>
     
   )
 }

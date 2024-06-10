@@ -8,7 +8,7 @@ const Writepad = (props:any) => {
     var counter = 0;
     var minFontSize = 10;
     var angleDistortion = 0;
-    var letters = "My name is Steve.  I use code to create moments of delight and impact for users.  Check out some of my projects. With a rich tapestry of 15 years in software development, I've mastered the art of weaving together frontend and backend technologies to craft immersive experiences that captivate users. As a Full Stack Developer, I'm not just coding; I'm orchestrating digital symphonies that resonate with elegance and efficiency. My journey is defined by a relentless pursuit of innovation, infusing every line of code with creativity and ingenuity. Whether I'm sculpting sleek interfaces or architecting robust backend systems, my passion for creating user-centric experiences shines through. In an ever-evolving technological landscape, I thrive on the thrill of exploration, embracing new tools and methodologies to push the boundaries of what's possible. With a blend of technical prowess and a flair for the imaginative, I'm poised to enchant users and elevate projects to new heights of excellence.";
+    var letters = "My name is Steve.  I use code to create moments of impact and delight for users.  Check out some of my projects. With a rich tapestry of 15 years in software development, I've mastered the art of weaving together frontend and backend technologies to craft immersive experiences that captivate users. As a Full Stack Developer, I'm not just coding; I'm orchestrating digital symphonies that resonate with elegance and efficiency. My journey is defined by a relentless pursuit of innovation, infusing every line of code with creativity and ingenuity. Whether I'm sculpting sleek interfaces or architecting robust backend systems, my passion for creating user-centric experiences shines through. In an ever-evolving technological landscape, I thrive on the thrill of exploration, embracing new tools and methodologies to push the boundaries of what's possible. With a blend of technical prowess and a flair for the imaginative, I'm poised to enchant users and elevate projects to new heights of excellence.";
 
 
     const ref = useRef();
@@ -16,10 +16,20 @@ const Writepad = (props:any) => {
     var ctx: CanvasRenderingContext2D | null | undefined;
     var mouse = {x: 0, y: 0, down: false}
 
+    canvas = ref.current;
+    ctx = canvas?.getContext("2d");
+
     useEffect(() => {
         canvas = ref.current;
         ctx = canvas?.getContext("2d");
         resizeCanvas();
+
+        if(ctx !== null && ctx !== undefined){
+            ctx.font = "30px caption";
+            ctx.fillStyle = 'rgb(79 70 229)'
+            ctx?.fillText("Drag here to help me write my story...",20,60);
+        }
+
 
         function mouseMove ( event:any ){
 
