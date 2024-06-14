@@ -90,8 +90,8 @@ const Projects: React.FC<Props> = () => {
 const projectPanel : JSX.Element[] = projectData.map((project, index) => {
     return (
         // <ScrollAnimation animateIn="fadeInLeft" initiallyVisible={false} animateOnce={true} delay={50 * index} animatePreScroll={true}>
-            <div className={`my-10 mx-48 ${index !== projectData.length-1 ? "border-b-4 border-slate-600" : "" } flex flex-row pb-5 content-start items-start`}> 
-                    {project.image!== undefined && <img src={typeof project.image === 'string' ? project.image : project.image.src.toString()} draggable={false} alt={project.description} 
+            <div key={project.title} className={`my-10 mx-48 ${index !== projectData.length-1 ? "border-b-4 border-slate-600" : "" } flex flex-row pb-5 content-start items-start`}> 
+                    {project.image !== undefined && <img src={typeof (project as any).image === 'string' ? (project as any).image : (project as any).image.src.toString()} draggable={false} alt={project.description} 
                         className="lift-on-hover shadow-lg max-h-80 object-cover content-center"/>}
                     {project.video!== undefined && <video controls={false} autoPlay={true} loop muted src={"/horsepower.mp4"} 
                         className="lift-on-hover shadow-lg object-cover max-w-[50%]"/>}
