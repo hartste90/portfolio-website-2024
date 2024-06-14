@@ -15,7 +15,7 @@ import dingbatsIcon from '@images/game-icons/Dingbats-Icon.webp';
 import drawDuelIcon from '@images/game-icons/Draw-Duel-Icon.webp';
 import dressupRunIcon from '@images/game-icons/Dressup-Run-Icon.webp';
 import elementFlowIcon from '@images/game-icons/Element-Flow-Icon.webp';
-import forgeAheadIcon from '@images/game-icons/Forge-Ahead-Icon.jpeg';
+import forgeAheadIcon from '@images/game-icons/Forge-Ahead-Icon.jpg';
 import fruitClinicIcon from '@images/game-icons/Fruit-Clinic-Icon.webp';
 import grabbyGrabIcon from '@images/game-icons/Grabby-Grab-Icon.webp';
 import happyGlassIcon from '@images/game-icons/Happy-Glass-Icon.webp';
