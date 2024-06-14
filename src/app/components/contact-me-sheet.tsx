@@ -31,20 +31,8 @@ const ContactMeSheet: React.FC<ContactMeSheetProps> = (props) => {
                   <SheetHeader>
                   <SheetTitle className='text-xl text-indigo-600 my-4 pb-4 justify-center content-center'>
                         Contact me..
-                    </SheetTitle>
-                    <Button
-      onClick={() => {
-        toast({
-          title: "Scheduled: Catch up",
-          description: "Friday, February 10, 2023 at 5:57 PM",
-        })
-      }}
-    >
-      Show Toast
-    </Button>
-                    
+                    </SheetTitle>                    
                     <Button onClick={() => {
-                        console.log("Email copied to clipboard!")
                       toast({
                         description: "Email copied to clipboard!",
                       });

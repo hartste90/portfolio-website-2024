@@ -15,17 +15,17 @@ import dingbatsIcon from '@images/game-icons/Dingbats-Icon.webp';
 import drawDuelIcon from '@images/game-icons/Draw-Duel-Icon.webp';
 import dressupRunIcon from '@images/game-icons/Dressup-Run-Icon.webp';
 import elementFlowIcon from '@images/game-icons/Element-Flow-Icon.webp';
-import forgeAheadIcon from '@images/game-icons/Forge-Ahead-Icon.jpg';
+// import forgeAheadIcon from '@images/game-icons/Forge-Ahead-Icon.jpg';
 import fruitClinicIcon from '@images/game-icons/Fruit-Clinic-Icon.webp';
 import grabbyGrabIcon from '@images/game-icons/Grabby-Grab-Icon.webp';
 import happyGlassIcon from '@images/game-icons/Happy-Glass-Icon.webp';
 import hookedIcon from '@images/game-icons/Hooked-Icon.webp';
 import hospitalIncIcon from '@images/game-icons/Hospital-Inc-Icon.webp';
-import iPeelGoodIcon from '@images/game-icons/I-Peel-Good-Icon.jpeg';
+// import iPeelGoodIcon from '@images/game-icons/I-Peel-Good-Icon.jpeg';
 import icingOnTheDressIcon from '@images/game-icons/Icing-On-The-Dress-Icon.webp';
-import idPleaseIcon from '@images/game-icons/ID-Please-Icon.jpeg';
-import idleMakeoverIcon from '@images/game-icons/Idle-Makeover-Icon.jpeg';
-import inkIncIcon from '@images/game-icons/Ink-Inc-Icon.jpeg';
+// import idPleaseIcon from '@images/game-icons/ID-Please-Icon.jpeg';
+// import idleMakeoverIcon from '@images/game-icons/Idle-Makeover-Icon.jpeg';
+// import inkIncIcon from '@images/game-icons/Ink-Inc-Icon.jpeg';
 import lifeSimulatorIcon from '@images/game-icons/Life-Simulator-Icon.webp';
 import loveBallsIcon from '@images/game-icons/Love-Balls-Icon.webp';
 import magicChanceIcon from '@images/game-icons/Magic-Chance-Icon.jpeg';
@@ -50,17 +50,17 @@ const appData =
     {image: drawDuelIcon, text: "Draw Duel"},
     {image: dressupRunIcon, text: "Dressup Run"},
     {image: elementFlowIcon, text: "Element Flow"},
-    {image: forgeAheadIcon, text: "Forge Ahead"},
+    // {image: forgeAheadIcon, text: "Forge Ahead"},
     {image: fruitClinicIcon, text: "Fruit Clinic"},
     {image: grabbyGrabIcon, text: "Grabby Grab"},
     {image: happyGlassIcon, text: "Happy Glass"},
     {image: hookedIcon, text: "Hooked"},
     {image: hospitalIncIcon, text: "Hospital Inc"},
-    {image: iPeelGoodIcon, text: "I Peel Good"},
+    // {image: iPeelGoodIcon, text: "I Peel Good"},
     {image: icingOnTheDressIcon, text: "Icing On The Dress"},
-    {image: idPleaseIcon, text: "ID Please"},
-    {image: idleMakeoverIcon, text: "Idle Makeover"},
-    {image: inkIncIcon, text: "Ink Inc"},
+    // {image: idPleaseIcon, text: "ID Please"},
+    // {image: idleMakeoverIcon, text: "Idle Makeover"},
+    // {image: inkIncIcon, text: "Ink Inc"},
     {image: lifeSimulatorIcon, text: "Life Simulator"},
     {image: loveBallsIcon, text: "Love Balls"},
     {image: magicChanceIcon, text: "Magic Chance"}

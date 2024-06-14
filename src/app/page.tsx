@@ -32,7 +32,7 @@ const app = initializeApp(firebaseConfig);
 export default function Home() {
   return (
     <>
-    <ContactMeSheet className="absolute top-5 right-5"/>
+    <ContactMeSheet className="absolute top-5 right-5 z-20"/>
     <Hero/>
     <Tools/>
     <Projects/>
