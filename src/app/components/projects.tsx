@@ -3,64 +3,83 @@ import { responsiveHoverText } from './responsive-hover-text';
 import ScrollAnimation from 'react-animate-on-scroll';
 //images
 import tailwindLogo from '@images/tools/tailwind-icon.png';
-import reactLogo from '@images/tools/react-icon.png';
-import androidStudioLogo from '@images/tools/android-studio-icon.png';
-import firebaseLogo from '@images/tools/firebase-icon.png';
-import awsLogo from '@images/tools/aws-icon.png';
-import cssLogo from '@images/tools/css3-icon.png';
-import dockerLogo from '@images/tools/docker-icon.png';
-import githubLogo from '@images/tools/github-icon.png';
-import html5Logo from '@images/tools/html5-icon.png';
-import javascriptLogo from '@images/tools/javascript-icon.png';
-import jenkinsLogo from '@images/tools/jenkins-icon.png';
-import mongodbLogo from '@images/tools/mongodb-icon.png';
-import nodejsLogo from '@images/tools/nodejs-icon.png';
-import perforceLogo from '@images/tools/perforce-icon.png';
-import pythonLogo from '@images/tools/python-icon.png';
-import typescriptLogo from '@images/tools/typescript-icon.png';
-import unityLogo from '@images/tools/unity-icon.png';
-import xcodeLogo from '@images/tools/xcode-icon.png';
+import appDiscovery from '@images/projects/app-discovery.jpeg';
+import dashboard from '@images/projects/dashboard.jpeg';
+import lionkit from '@images/projects/lionkit-diagram.jpeg';
+// import horsepower from '@images/projects/horsepower.mp4';
+import horsepower from 'file-loader?modules!@images/projects/horsepower.mp4';
+import animationEventFinder from '@images/projects/animation-event-finder.png';
+import sproutSplashImage from '@images/projects/sprout-splash-image.png';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 
 interface Props {
     // Define the props for your component here
 }
 
-const toolData = 
+const projectData = 
 [
-    {image: reactLogo, text: "React"},
-    {image: tailwindLogo, text: "Tailwind CSS"},
-    {image: androidStudioLogo, text: "Android Studio"},
-    {image: firebaseLogo, text: "Google Firebase"},
-    {image: awsLogo, text: "AWS"},
-    {image: cssLogo, text: "CSS"},
-    {image: dockerLogo, text: "Docker"},
-    {image: githubLogo, text: "GitHub"},
-    {image: html5Logo, text: "HTML5"},
-    {image: javascriptLogo, text: "JavaScript"},
-    {image: jenkinsLogo, text: "Jenkins"},
-    {image: mongodbLogo, text: "MongoDB"},
-    {image: nodejsLogo, text: "Node.js"},
-    {image: perforceLogo, text: "Perforce"},
-    {image: pythonLogo, text: "Python"},
-    {image: typescriptLogo, text: "TypeScript"},
-    {image: unityLogo, text: "Unity Engine"},
-    {image: xcodeLogo, text: "Xcode"}
+    
+    
+    
+    {
+        image: dashboard, 
+        title: "Internal KPI Dashboards", 
+        company: "Applovin", 
+        description: "KPI dashboards displaying key performance indicators in interactive charts and graphs.  Drawn from our aggregated internal database droplets, allowing for quick, organized review, analysis, and filtering for product manager and business development teams.",
+        technologies: "React, Tailwind, DigitalOcean (DB), AWS, Jenkins"
+    },
+    {
+        image: lionkit, 
+        title: "Developerkit SDK", 
+        company: "Applovin", 
+        description: "An SDK that allows developers to easily integrate Applovin's ad network, analytics, and IAP frameworks into their mobile apps.  The SDK is designed to be lightweight and easy to use, with a focus on performance, ease of integration, and automating compliance.",
+        technologies: "React, CSS3, C#, Objective-C, AWS, Jenkins"
+    },
+    {
+        video: horsepower, 
+        title: "Horsepower", 
+        company: "Ioconic Ltd.", 
+        description: "A multiplatform application providing users with interfaces to buy, trade, train, and race digital horse racing assets.  The app focuses on modern UX principles and performance to deliver the best-in-class experinece for blockchain traders and horse racing enthusiasts.",
+        technologies: "React, HTML, CSS, C#, Unity, UXML, Docker, MongoDB, AWS"
+    },
+    {
+        image: animationEventFinder,
+        title: "Animation Event Finder",
+        company: "Open Source",
+        description: "A public project I began to increase the observability between interactive animations and scripting.  Includes the ability to search for scripts called during animations and view information about them from a debug modal without having to drill into the animation framework.",
+        technologies: "C#, CSS, Unity"
+    },
+    {
+        image: sproutSplashImage,
+        title: "Sprout - Idle Garden",
+        company: "Applovin",
+        description: "A hugely popular mobile game where players grow and manage their own garden.  The game features a variety of plants, decorations, and events to keep players engaged from day-0 to day-100.  I was the lead engineer on the app's core architecture, UI, gameplay, and monetization features.",
+        technologies: "C#, Unity"
+    },
+    {
+        image: appDiscovery, 
+        title: "App Discovery", 
+        company: "Applovin", 
+        description: "A web portal that provides developers and business development teams insights and analytics on the performance of our app recommendation algorthim and performance.",
+        technologies: "React, Tailwind, NodeJS, AWS, GitLab"
+    },
+    
+
 ];
 
 
 
 const Projects: React.FC<Props> = () => {
     // Implement your component logic here
+    console.log(horsepower);
     return (
-        <section className="section relative flex items-center justify-center min-h-screen px-4 bg-gradient-to-br from-pink-100 to-indigo-100"> 
-        <div className='blob-6 w-96 h-96 absolute top-20'></div>
-        <div className='blob-3 w-[80px] h-[80px]'></div>
-            <div className="text-left my-auto select-none">
+        <section className=" relative flex items-center justify-center min-h-screen px-4 "> 
+            <div className="text-right my-auto select-none">
             <h1 className="mt-[4rem] hero-main-text text-6xl font-bold tracking-tight text-gray-900 mb-10">
-                    {responsiveHoverText("Some of the tools I like to use.")}
+                    {responsiveHoverText("A few of my projects.")}
                 </h1>
                 <div className='flex flex-row flex-wrap justify-center basis-1/2'>
-                    {toolPanel()}
+                    {projectPanel}
                 </div>
                    
             </div>
@@ -68,53 +87,34 @@ const Projects: React.FC<Props> = () => {
     );
 };
 
-const toolPanel = function() {
-    const rowLength = 20;
-    let rows: React.JSX.Element[] = [];
-    let row: React.JSX.Element[] = [];
-    let rowNum = 1;
-    toolData.forEach((tool, index) => {
-        console.log(tool.text);
-        const toolElement = (
-            <ScrollAnimation animateIn="fadeInLeft" initiallyVisible={false} animateOnce={false} delay={50 * index} animatePreScroll={true}>
-                <div className={` m-10 lift-on-hover  border-b-4 border-slate-600`}> 
-                    <img src={typeof tool.image === 'string' ? tool.image : tool.image.src.toString()} draggable={false} alt={tool.text} 
-                        className="w-24 h-24 content-center mx-auto mb-5"/>
-                    <div className=' p-1 px-4'>
-                        <p className='text-xl text-center text-slate-700'>{tool.text}</p>
-                    </div>
-                </div>
-            </ScrollAnimation>
-        );
-
-        if(row.length < rowLength) {
-            row.push(toolElement);
-        }
-        else {
-            rows.push(
-                <div className="flex m-1 flex-row flex-wrap justify-center">
-                    {row}
-                </div>
-            );
-            rowNum++;
-            row = [];
-            row.push(toolElement);
-        }
-    });
-    if(row.length > 0){
-        rows.push(
-            <div className="flex m-1 flex-row flex-wrap justify-center">
-                {row}
-            </div>
-        );
-    }
-    
+const projectPanel : JSX.Element[] = projectData.map((project, index) => {
     return (
-        <div className='block'>
-            {rows}
-        </div>
+        // <ScrollAnimation animateIn="fadeInLeft" initiallyVisible={false} animateOnce={true} delay={50 * index} animatePreScroll={true}>
+            <div className={`my-10 mx-48 ${index !== projectData.length-1 ? "border-b-4 border-slate-600" : "" } flex flex-row pb-5 content-start items-start`}> 
+                    {project.image!== undefined && <img src={typeof project.image === 'string' ? project.image : project.image.src.toString()} draggable={false} alt={project.description} 
+                        className="lift-on-hover shadow-lg max-h-80 object-cover content-center"/>}
+                    {project.video!== undefined && <video controls={false} autoPlay={true} loop muted src={"/horsepower.mp4"} 
+                        className="lift-on-hover shadow-lg object-cover max-w-[50%]"/>}
+                    
+                <div className='p-1 px-4 w-1/2 text-left'>
+                    <Card className='border-none shadow-none h-full'>
+                        <CardHeader>
+                            <CardTitle>{project.title}</CardTitle>
+                            <CardDescription>{project.company}</CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            <p>{project.description}</p>
+                        </CardContent>
+                        <CardFooter className='text-slate-400'>
+                            <h4>{project.technologies}</h4>
+                        </CardFooter>
+                    </Card>
+                    {/* <p className='text-xl text-center text-slate-700'>{project.title}</p> */}
+                </div>
+            </div>
+        // </ScrollAnimation>
     );
-};
+});
 
 
 export default Projects;

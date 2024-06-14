@@ -9,6 +9,8 @@ import Hero from "./components/hero";
 import { Toaster } from "@/components/ui/toaster";
 import Tools from "./components/tools";
 import Projects from "./components/projects";
+import Apps from "./components/apps";
+import ContactMeSheet from "./components/contact-me-sheet";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -30,9 +32,15 @@ const app = initializeApp(firebaseConfig);
 export default function Home() {
   return (
     <>
+    <ContactMeSheet className="absolute top-5 right-5"/>
     <Hero/>
     <Tools/>
     <Projects/>
+    <Apps/>
+    <div className="flex items-center justify-center w-full h-24 py-20">
+      <ContactMeSheet/>
+    </div>
+    <Toaster/>
     <footer className="flex items-center justify-center w-full h-24 py-20">
       <a>
         this website was handcrafted by <b>Steve Hart</b>

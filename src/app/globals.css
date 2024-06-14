@@ -144,9 +144,9 @@
   background-position: 100% 100%;
 }
 
-.section {
+.section-left {
   -webkit-clip-path:polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
   clip-path:polygon(0 0, 100% 10%, 100% 90%, 0% 100%);
   justify-content: center;
-  height: 100vh;
+  /* background-color: blue; */
 }

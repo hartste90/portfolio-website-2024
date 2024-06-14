@@ -29,21 +29,21 @@ const toolData =
 [
     {image: reactLogo, text: "React"},
     {image: tailwindLogo, text: "Tailwind CSS"},
-    {image: androidStudioLogo, text: "Android Studio"},
+    {image: typescriptLogo, text: "TypeScript"},
+    {image: html5Logo, text: "HTML5"},
+    {image: cssLogo, text: "CSS"},
+    {image: javascriptLogo, text: "JavaScript"},
     {image: firebaseLogo, text: "Google Firebase"},
     {image: awsLogo, text: "AWS"},
-    {image: cssLogo, text: "CSS"},
     {image: dockerLogo, text: "Docker"},
-    {image: githubLogo, text: "GitHub"},
-    {image: html5Logo, text: "HTML5"},
-    {image: javascriptLogo, text: "JavaScript"},
     {image: jenkinsLogo, text: "Jenkins"},
+    {image: githubLogo, text: "GitHub"},
+    {image: perforceLogo, text: "Perforce"},
     {image: mongodbLogo, text: "MongoDB"},
     {image: nodejsLogo, text: "Node.js"},
-    {image: perforceLogo, text: "Perforce"},
     {image: pythonLogo, text: "Python"},
-    {image: typescriptLogo, text: "TypeScript"},
     {image: unityLogo, text: "Unity Engine"},
+    {image: androidStudioLogo, text: "Android Studio"},
     {image: xcodeLogo, text: "Xcode"}
 ];
 
@@ -52,11 +52,9 @@ const toolData =
 const Tools: React.FC<Props> = () => {
     // Implement your component logic here
     return (
-        <section className="section relative flex items-center justify-center min-h-screen px-4 bg-gradient-to-br from-pink-100 to-indigo-100"> 
-        <div className='blob-6 w-96 h-96 absolute top-20'></div>
-        <div className='blob-3 w-[80px] h-[80px]'></div>
+        <section className="section-left relative flex items-center justify-center min-h-screen px-4 bg-gradient-to-br from-pink-100 to-indigo-100 py-24"> 
             <div className="text-left my-auto select-none">
-            <h1 className="mt-[4rem] hero-main-text text-6xl font-bold tracking-tight text-gray-900 mb-10">
+            <h1 className="mt-[4rem] ml-24 hero-main-text text-6xl font-bold tracking-tight text-gray-900 mb-10">
                     {responsiveHoverText("Some of the tools I like to use.")}
                 </h1>
                 <div className='flex flex-row flex-wrap justify-center basis-1/2'>
@@ -74,9 +72,8 @@ const toolPanel = function() {
     let row: React.JSX.Element[] = [];
     let rowNum = 1;
     toolData.forEach((tool, index) => {
-        console.log(tool.text);
         const toolElement = (
-            <ScrollAnimation animateIn="fadeInLeft" initiallyVisible={false} animateOnce={false} delay={50 * index} animatePreScroll={true}>
+            <ScrollAnimation animateIn="fadeInLeft" initiallyVisible={false} animateOnce={true} delay={50 * index} animatePreScroll={true}>
                 <div className={` m-10 lift-on-hover  border-b-4 border-slate-600`}> 
                     <img src={typeof tool.image === 'string' ? tool.image : tool.image.src.toString()} draggable={false} alt={tool.text} 
                         className="w-24 h-24 content-center mx-auto mb-5"/>
