@@ -145,20 +145,20 @@ export default function Hero() {
                 <h1 className="hero-main-text text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
                   {responsiveHoverText("I use code to create moments of impact and delight.")}
                 </h1>
-                <p className="mt-6 text-lg leading-8 text-gray-600">
+                {/* <p className="mt-6 text-lg leading-8 text-gray-600">
                 Click and drag on the paper below&nbsp;to help me <span className="p-1 italic bg-indigo-200 highlight">
                 write my story...
                     </span> 
-                </p>
+                </p> */}
               </div>
             </div>  
 
-        <div className="notepad mx-20">
+        {/* <div className="notepad mx-20">
           <div className="top"></div>
           <div id="canvasParent" className="paper mb-40">
             <Writepad className="absolute z-10"/>
           </div>
-        </div>
+        </div> */}
       </div>
       </div>
     

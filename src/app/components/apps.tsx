@@ -76,7 +76,7 @@ const Apps: React.FC<Props> = () => {
         <section className="section-left relative flex items-center justify-center min-h-screen px-4 bg-gradient-to-br from-emerald-100 to-indigo-200 py-24 pb-36"> 
             <div className="text-left my-auto select-none">
             <h1 className="mt-[4rem] ml-24 hero-main-text text-6xl font-bold tracking-tight text-gray-900 mb-10">
-                    {responsiveHoverText("Some of the apps that have launched with my tooling.")}
+                    {responsiveHoverText("Some apps that use my tooling.")}
                 </h1>
                 <div className='flex flex-row flex-wrap justify-center basis-1/2'>
                     {toolPanel()}
