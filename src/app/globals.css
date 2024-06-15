@@ -74,7 +74,7 @@
       @apply bg-background text-foreground;
     }
   }
-
+  
 .blob1 { 
   animation: 10s blob1 infinite; 
 }

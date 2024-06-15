@@ -37,11 +37,11 @@ export default function Home() {
     <Tools/>
     <Projects/>
     <Apps/>
-    <div className="flex items-center justify-center w-full h-24 py-20">
+    <div className="flex items-center justify-center w-full h-80">
       <ContactMeSheet/>
     </div>
     <Toaster/>
-    <footer className="flex items-center justify-center w-full h-24 py-20">
+    <footer className="flex items-center justify-center w-full h-10 py-10 bg-gradient-to-b from-pink-100 to-white text-slate-800">
       <a>
         this website was handcrafted by <b>Steve Hart</b>
       </a>
