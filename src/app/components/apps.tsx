@@ -80,9 +80,11 @@ const Apps: React.FC<Props> = () => {
                 </h1>
                 <div className='flex flex-row flex-wrap justify-center basis-1/2'>
                     {toolPanel()}
-                    <div className='text-xl text-gray-900'>
-                        ... and many more!
-                    </div>
+                    <ScrollAnimation animateIn="fadeInLeft" initiallyVisible={false} animateOnce={true} animatePreScroll={true}>
+                        <div className='text-xl text-gray-900'>
+                            ... and many more!
+                        </div>
+                    </ScrollAnimation>
                 </div>
             </div>
          </section>

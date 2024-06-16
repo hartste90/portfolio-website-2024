@@ -78,9 +78,11 @@ const Projects: React.FC<Props> = () => {
             <h1 className="mt-[4rem] hero-main-text text-6xl font-bold tracking-tight text-gray-900 mb-10">
                     {responsiveHoverText("A few of my projects.")}
                 </h1>
-                <div className='flex flex-row flex-wrap justify-center basis-1/2'>
-                    {projectPanel}
-                </div>
+                <ScrollAnimation animateIn="fadeInRight" initiallyVisible={false} animateOnce={true} animatePreScroll={true}>
+                    <div className='flex flex-row flex-wrap justify-center basis-1/2'>
+                        {projectPanel}
+                    </div>
+                </ScrollAnimation>
                    
             </div>
          </section>
@@ -89,10 +91,9 @@ const Projects: React.FC<Props> = () => {
 
 const projectPanel : JSX.Element[] = projectData.map((project, index) => {
     return (
-        // <ScrollAnimation animateIn="fadeInLeft" initiallyVisible={false} animateOnce={true} delay={50 * index} animatePreScroll={true}>
             <div key={project.title} className={`my-10 mx-48 ${index !== projectData.length-1 ? "border-b-4 border-slate-600" : "" } flex flex-row pb-5 content-start items-start`}> 
                     {project.image !== undefined && <img src={typeof (project as any).image === 'string' ? (project as any).image : (project as any).image.src.toString()} draggable={false} alt={project.description} 
-                        className="lift-on-hover shadow-lg max-h-80 object-cover content-center"/>}
+                        className="lift-on-hover shadow-lg max-h-80 max-w-[50%] object-cover content-center"/>}
                     {project.video!== undefined && <video controls={false} autoPlay={true} loop muted src={"/horsepower.mp4"} 
                         className="lift-on-hover shadow-lg object-cover max-w-[50%]"/>}
                     
@@ -112,7 +113,6 @@ const projectPanel : JSX.Element[] = projectData.map((project, index) => {
                     {/* <p className='text-xl text-center text-slate-700'>{project.title}</p> */}
                 </div>
             </div>
-        // </ScrollAnimation>
     );
 });
 
