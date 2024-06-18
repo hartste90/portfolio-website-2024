@@ -55,14 +55,14 @@ export default function Hero() {
           className="absolute inset-x-0 -z-10 transform-gpu overflow-clip sm:-top-80"
           aria-hidden="true"
         >
-          <div className='rotate animate-spin-slow blur-2xl'>
+          <div className='rotate animate-spin-slow blur-xl'>
             <div
             // className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2  bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem] blob1 blur-3xl"
             className=" aspect-[1155/678] w-[36.125rem] -translate-x-1/2  bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem] blob1"
 
           />
           </div>
-          <div className='rotate animate-spin-slow blur-2xl'>
+          <div className='rotate animate-spin-slow blur-xl'>
           <div
             // className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2  bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem] blob1 blur-3xl"
             className=" aspect-[1155/678] w-[36.125rem] -translate-x-1/2  bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem] blob1"
