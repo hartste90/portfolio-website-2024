@@ -25,7 +25,7 @@ const ContactMeSheet: React.FC<ContactMeSheetProps> = (props) => {
         <div className='z-10'>
               <Sheet>
                 <SheetTrigger
-                  className={`button-hover text-md font-semibold leading-6 bg-gradient-to-r from-pink-500 to-indigo-500 text-white rounded-full p-4 px-8 transition-all duration-300 ${props.className}`}
+                  className={`button-hover font-semibold leading-6 bg-gradient-to-r from-pink-500 to-indigo-500 text-white rounded-full p-4 px-8 transition-all duration-300 ${props.className}`}
                 >Get in touch</SheetTrigger>
                 <SheetContent>
                   <SheetHeader>
@@ -40,7 +40,7 @@ const ContactMeSheet: React.FC<ContactMeSheetProps> = (props) => {
                       });
                       navigator.clipboard.writeText("steven.hart282@gmail.com");
                     }}variant="outline" 
-                    className={`mt-[100px] text-md font-semibold bg-gradient-to-r inline-block text-white bg-clip-border from-pink-500 to-indigo-500 hover:bg-clip-text hover:text-black transition-all`}>
+                    className={`mt-[100px] text-sm sm:text-md font-semibold bg-gradient-to-r inline-block text-white bg-clip-border from-pink-500 to-indigo-500 hover:bg-clip-text hover:text-black transition-all`}>
                       <span>steven.hart282@gmail.com</span>
                     </Button>
                     <SheetTitle 

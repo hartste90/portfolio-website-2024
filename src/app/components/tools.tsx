@@ -54,7 +54,7 @@ const Tools: React.FC<Props> = () => {
     return (
         <section className="section-left relative flex items-center justify-center min-h-screen px-4 bg-gradient-to-br from-pink-100 to-indigo-100 py-24"> 
             <div className="text-left my-auto select-none">
-            <h1 className="mt-[4rem] ml-24 hero-main-text text-6xl font-bold tracking-tight text-gray-900 mb-10">
+            <h1 className="mt-[4rem] sm:ml-24 hero-main-text font-bold tracking-tight text-gray-900 mb-10">
                     {responsiveHoverText("Some of the tools I like to use.")}
                 </h1>
                 <div className='flex flex-row flex-wrap justify-center basis-1/2'>
@@ -74,7 +74,7 @@ const toolPanel = function() {
     toolData.forEach((tool, index) => {
         const toolElement = (
             <ScrollAnimation animateIn="fadeInLeft" initiallyVisible={false} animateOnce={true} delay={50 * index} animatePreScroll={true}>
-                <div className={` m-10 lift-on-hover  border-b-4 border-slate-600`}> 
+                <div className={`m-3 lift-on-hover  border-b-4 border-slate-600`}> 
                     <img src={typeof tool.image === 'string' ? tool.image : tool.image.src.toString()} draggable={false} alt={tool.text} 
                         className="w-24 h-24 content-center mx-auto mb-5"/>
                     <div className=' p-1 px-4'>

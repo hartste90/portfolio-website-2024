@@ -70,12 +70,10 @@ const projectData =
 
 
 const Projects: React.FC<Props> = () => {
-    // Implement your component logic here
-    console.log(horsepower);
     return (
-        <section className=" relative flex items-center justify-center min-h-screen px-4 "> 
+        <section className="relative flex items-center justify-center"> 
             <div className="text-right my-auto select-none">
-            <h1 className="mt-[4rem] hero-main-text text-6xl font-bold tracking-tight text-gray-900 mb-10">
+            <h1 className="mt-[4rem] hero-main-text font-bold tracking-tight text-gray-900 mb-10">
                     {responsiveHoverText("A few of my projects.")}
                 </h1>
                 <ScrollAnimation animateIn="fadeInRight" initiallyVisible={false} animateOnce={true} animatePreScroll={true}>
@@ -91,13 +89,37 @@ const Projects: React.FC<Props> = () => {
 
 const projectPanel : JSX.Element[] = projectData.map((project, index) => {
     return (
-            <div key={project.title} className={`my-10 mx-48 ${index !== projectData.length-1 ? "border-b-4 border-slate-600" : "" } flex flex-row pb-5 content-start items-start`}> 
+            <div key={project.title} className={`my-10 sm:mx-10  ${index !== projectData.length-1 ? "border-b-4 border-slate-600" : "" } sm:flex flex-row pb-5 content-center items-center`}> 
+                    {/* //desktop */}
                     {project.image !== undefined && <img src={typeof (project as any).image === 'string' ? (project as any).image : (project as any).image.src.toString()} draggable={false} alt={project.description} 
-                        className="lift-on-hover shadow-lg max-h-80 max-w-[50%] object-cover content-center"/>}
+                        className="hidden sm:flex lift-on-hover shadow-lg max-h-80 max-w-[50%] object-cover content-center"/>}
                     {project.video!== undefined && <video controls={false} autoPlay={true} loop muted src={"/horsepower.mp4"} 
-                        className="lift-on-hover shadow-lg object-cover max-w-[50%]"/>}
+                        className="hidden sm:flex lift-on-hover shadow-lg object-cover max-w-[50%]"/>}
+                    {/* //mobile */}
+                    {project.image !== undefined && <img src={typeof (project as any).image === 'string' ? (project as any).image : (project as any).image.src.toString()} draggable={false} alt={project.description} 
+                        className="sm:hidden lift-on-hover inline-block shadow-lg content-center"/>}
+                    {project.video!== undefined && <video controls={false} autoPlay={true} loop muted src={"/horsepower.mp4"} 
+                        className="sm:hidden lift-on-hover inline-block shadow-lg object-cover w-11/12"/>}
                     
-                <div className='p-1 px-4 w-1/2 text-left'>
+
+                {/* //desktop */}
+                <div className='hidden sm:flex p-1 px-4 w-1/2 text-left'>
+                    <Card className='border-none shadow-none h-full'>
+                        <CardHeader>
+                            <CardTitle>{project.title}</CardTitle>
+                            <CardDescription>{project.company}</CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            <p>{project.description}</p>
+                        </CardContent>
+                        <CardFooter className='text-slate-400'>
+                            <h4>{project.technologies}</h4>
+                        </CardFooter>
+                    </Card>
+                    {/* <p className='text-xl text-center text-slate-700'>{project.title}</p> */}
+                </div>
+                {/* //mobile */}
+                <div className='sm:hidden w-full text-left'>
                     <Card className='border-none shadow-none h-full'>
                         <CardHeader>
                             <CardTitle>{project.title}</CardTitle>

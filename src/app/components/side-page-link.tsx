@@ -32,8 +32,8 @@ const SidePageLink: React.FC<SidePageLinkProps> = ({
                     onMouseEnter={(e) => {btnHoverSet(true)}}
                     onMouseLeave={(e) => {btnHoverSet(false)}}   
                     variant="outline" 
-                    className={`text-md font-semibold bg-gradient-to-r inline-block text-white bg-clip-border from-pink-500 to-indigo-500 hover:bg-clip-text hover:text-transparent hover:text-black transition-all w-1/2`}>
-                      <span className='flex justify-evenly'>{icon} {title} </span>
+                    className={`text-sm sm:text-md font-semibold bg-gradient-to-r inline-block text-white bg-clip-border from-pink-500 to-indigo-500 hover:bg-clip-text hover:text-transparent hover:text-black transition-all w-1/2`}>
+                      <span className='flex justify-evenly'> {title} </span>
                     </Button>
             </SheetDescription>
         </>

@@ -75,7 +75,7 @@ const Apps: React.FC<Props> = () => {
     return (
         <section className="section-left relative flex items-center justify-center min-h-screen px-4 bg-gradient-to-br from-emerald-100 to-indigo-200 py-24 pb-36"> 
             <div className="text-left my-auto select-none">
-            <h1 className="mt-[4rem] ml-24 hero-main-text text-6xl font-bold tracking-tight text-gray-900 mb-10">
+            <h1 className="mt-[4rem] hero-main-text font-bold tracking-tight text-gray-900 mb-10">
                     {responsiveHoverText("Some apps that use my tooling.")}
                 </h1>
                 <div className='flex flex-row flex-wrap justify-center basis-1/2'>
@@ -99,7 +99,7 @@ const toolPanel = function() {
     appData.forEach((tool, index) => {
         const toolElement = (
             <ScrollAnimation animateIn="fadeInLeft" initiallyVisible={false} animateOnce={true} delay={50 * index} animatePreScroll={true}>
-                <div className={` m-10 lift-on-hover `}> 
+                <div className={`sm:mx-10 lift-on-hover my-4 inline-block`}> 
                     <img src={typeof tool.image === 'string' ? tool.image : tool.image.src.toString()} draggable={false} alt={tool.text} 
                         className="w-24 h-24 content-center mx-auto mb-5 rounded-xl"/>
                     <div className=' p-1 px-4'>
