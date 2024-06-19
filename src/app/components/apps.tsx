@@ -81,8 +81,8 @@ const Apps: React.FC<Props> = () => {
                 <div className='flex flex-row flex-wrap justify-center basis-1/2'>
                     {toolPanel()}
                     <ScrollAnimation animateIn="fadeInLeft" initiallyVisible={false} animateOnce={true} animatePreScroll={true}>
-                        <div className='text-xl text-gray-900'>
-                            ... and many more!
+                        <div className=' italic text-xl text-slate-500 pt-10'>
+                            ~ and many more ~
                         </div>
                     </ScrollAnimation>
                 </div>
