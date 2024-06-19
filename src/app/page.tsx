@@ -41,8 +41,8 @@ export default function Home() {
       <ContactMeSheet/>
     </div>
     <Toaster/>
-    <footer className="flex items-center justify-center h-10 py-10 bg-gradient-to-b from-pink-100 to-white text-pink-700">
-      <a className="w-1/2 text-center">
+    <footer className="flex items-center justify-center h-10 py-8 bg-gradient-to-b from-pink-100 to-white text-slate-400">
+      <a className="mx-3 text-center">
         this website was handcrafted by <span className="italic">Steve Hart</span>
       </a>
       </footer>
