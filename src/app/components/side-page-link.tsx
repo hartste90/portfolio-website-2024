@@ -19,21 +19,16 @@ const SidePageLink: React.FC<SidePageLinkProps> = ({
     return (
         <>
             <SheetDescription>
-    {/* //             className={`mt-[100px] text-md font-semibold bg-gradient-to-r inline-block text-white bg-clip-border from-pink-500 to-indigo-500 hover:bg-clip-text hover:text-transparent transition-all p-2 rounded-sm hover:border-slate-200 hover:border `}> */}
- {/* className="p-3 my-2 text-indigo-600 text-md hover:bg-indigo-600 hover:text-white transition duration-300"> */}
-    {/* //             <div className='flex hover:text-black'>
-    //                 {icon}
-    //               <a target='_blank' className="mx-4"href={url}>{title}</a>               
-    //             </div> */}
-
                 <Button onClick={() => {
                         window.open(url, '_blank')
                     }}
                     onMouseEnter={(e) => {btnHoverSet(true)}}
                     onMouseLeave={(e) => {btnHoverSet(false)}}   
                     variant="outline" 
-                    className={`text-sm sm:text-md font-semibold bg-gradient-to-r inline-block text-white bg-clip-border from-pink-500 to-indigo-500 hover:bg-clip-text hover:text-transparent hover:text-black transition-all w-1/2`}>
-                      <span className='flex justify-evenly'> {title} </span>
+                    className={`button-hover font-semibold leading-6 bg-gradient-to-r from-pink-500 to-indigo-500 text-white hover:text-white rounded-full p-4 px-8 transition-all duration-300 w-9/12`}
+                    >
+                        <span className='flex justify-evenly mr-5'> {icon} </span>
+                        <span className='flex justify-evenly'> {title} </span>
                     </Button>
             </SheetDescription>
         </>

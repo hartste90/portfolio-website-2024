@@ -28,10 +28,10 @@ const ContactMeSheet: React.FC<ContactMeSheetProps> = (props) => {
                   className={`button-hover font-semibold leading-6 bg-gradient-to-r from-pink-500 to-indigo-500 text-white rounded-full p-4 px-8 transition-all duration-300 ${props.className}`}
                 >Get in touch</SheetTrigger>
                 <SheetContent>
-                  <SheetHeader>
+                  <SheetHeader className='mt-5'>
                   <SheetTitle
                     // className='text-xl text-indigo-600 my-4 pb-4 justify-center content-center'>
-                    className={`mb-10 text-md font-semibold bg-gradient-to-r inline-block text-transparent bg-clip-text from-pink-500 to-indigo-500`}>
+                    className={`text-md font-semibold bg-gradient-to-r inline-block text-transparent bg-clip-text from-pink-500 to-indigo-500`}>
                         Contact me.
                     </SheetTitle>                    
                     <Button onClick={() => {
@@ -40,9 +40,11 @@ const ContactMeSheet: React.FC<ContactMeSheetProps> = (props) => {
                       });
                       navigator.clipboard.writeText("steven.hart282@gmail.com");
                     }}variant="outline" 
-                    className={`mt-[100px] text-sm sm:text-md font-semibold bg-gradient-to-r inline-block text-white bg-clip-border from-pink-500 to-indigo-500 hover:bg-clip-text hover:text-black transition-all`}>
+                    className={`button-hover font-semibold leading-6 bg-gradient-to-r from-pink-500 to-indigo-500 text-white hover:text-white rounded-full p-4 px-8 transition-all duration-300`}>                  
                       <span>steven.hart282@gmail.com</span>
                     </Button>
+                    </SheetHeader>
+                    <SheetHeader>
                     <SheetTitle 
                       className={`pt-10 text-md font-semibold bg-gradient-to-r inline-block text-transparent bg-clip-text from-pink-500 to-indigo-500`}>
                         {/* className='pt-10 text-xl text-indigo-600 my-4 pb-4 justify-center content-center'> */}

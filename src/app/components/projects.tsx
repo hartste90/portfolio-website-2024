@@ -97,9 +97,9 @@ const projectPanel : JSX.Element[] = projectData.map((project, index) => {
                         className="hidden sm:flex lift-on-hover shadow-lg object-cover max-w-[50%]"/>}
                     {/* //mobile */}
                     {project.image !== undefined && <img src={typeof (project as any).image === 'string' ? (project as any).image : (project as any).image.src.toString()} draggable={false} alt={project.description} 
-                        className="sm:hidden lift-on-hover inline-block shadow-lg content-center"/>}
+                        className="sm:hidden inline-block shadow-lg content-center p-3"/>}
                     {project.video!== undefined && <video controls={false} autoPlay={true} loop muted src={"/horsepower.mp4"} 
-                        className="sm:hidden lift-on-hover inline-block shadow-lg object-cover w-11/12"/>}
+                        className="sm:hidden shadow-lg p-3"/>}
                     
 
                 {/* //desktop */}
