@@ -89,7 +89,7 @@ const toolPanel = function() {
         }
         else {
             rows.push(
-                <div className="flex m-1 flex-row flex-wrap justify-center">
+                <div key={index} className="flex m-1 flex-row flex-wrap justify-center">
                     {row}
                 </div>
             );
@@ -100,7 +100,7 @@ const toolPanel = function() {
     });
     if(row.length > 0){
         rows.push(
-            <div className="flex m-1 flex-row flex-wrap justify-center">
+            <div key="lastRow" className="flex m-1 flex-row flex-wrap justify-center">
                 {row}
             </div>
         );
