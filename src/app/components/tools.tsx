@@ -73,7 +73,7 @@ const toolPanel = function() {
     let rowNum = 1;
     toolData.forEach((tool, index) => {
         const toolElement = (
-            <ScrollAnimation animateIn="fadeInLeft" initiallyVisible={false} animateOnce={true} delay={50 * index} animatePreScroll={true}>
+            <ScrollAnimation key={index} animateIn="fadeInLeft" initiallyVisible={false} animateOnce={true} delay={50 * index} animatePreScroll={true}>
                 <div className={`m-3 lift-on-hover  border-b-4 border-slate-600`}> 
                     <img src={typeof tool.image === 'string' ? tool.image : tool.image.src.toString()} draggable={false} alt={tool.text} 
                         className="w-24 h-24 content-center mx-auto mb-5"/>
