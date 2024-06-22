@@ -98,7 +98,7 @@ const toolPanel = function() {
     let rowNum = 1;
     appData.forEach((tool, index) => {
         const toolElement = (
-            <ScrollAnimation animateIn="fadeInLeft" initiallyVisible={false} animateOnce={true} delay={50 * index} animatePreScroll={true}>
+            <ScrollAnimation key={"toolPanel"+index} animateIn="fadeInLeft" initiallyVisible={false} animateOnce={true} delay={50 * index} animatePreScroll={true}>
                 <div className={`sm:mx-10 lift-on-hover my-4 inline-block`}> 
                     <img src={typeof tool.image === 'string' ? tool.image : tool.image.src.toString()} draggable={false} alt={tool.text} 
                         className="w-24 h-24 content-center mx-auto mb-5 rounded-xl"/>
@@ -114,7 +114,7 @@ const toolPanel = function() {
         }
         else {
             rows.push(
-                <div className="flex m-1 flex-row flex-wrap justify-center">
+                <div key={"toolElement"+index} className="flex m-1 flex-row flex-wrap justify-center">
                     {row}
                 </div>
             );
@@ -125,7 +125,7 @@ const toolPanel = function() {
     });
     if(row.length > 0){
         rows.push(
-            <div className="flex m-1 flex-row flex-wrap justify-center">
+            <div key={"finalToolElement"} className="flex m-1 flex-row flex-wrap justify-center">
                 {row}
             </div>
         );
