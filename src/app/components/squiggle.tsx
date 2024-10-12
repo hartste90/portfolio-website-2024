@@ -8,6 +8,9 @@ const Squiggle: React.FC = () => {
   const squiggleRef = useRef<SVGSVGElement | null>(null);
   const pathRef = useRef<SVGPathElement | null>(null);
   const scroll = () => {
+    if (typeof window === "undefined") {
+      return;
+    }
     const svg = squiggleRef.current;
     if (svg) {
       const path = pathRef.current;
