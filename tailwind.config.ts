@@ -1,13 +1,13 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -19,7 +19,7 @@ const config = {
     },
     extend: {
       skew: {
-        '7': '7deg',
+        "7": "7deg",
       },
       colors: {
         border: "hsl(var(--border))",
@@ -56,6 +56,14 @@ const config = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      zIndex: {
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5",
+        "6": "6",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -71,20 +79,19 @@ const config = {
           to: { height: "0" },
         },
         fadeIn: {
-					from: { opacity: "0" },
-					to: { opacity: "1" },
-				},
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        'spin-slow': 'spin 30s linear infinite',
-        fade: 'fadeIn .5s ease-in-out',
-
+        "spin-slow": "spin 30s linear infinite",
+        fade: "fadeIn .5s ease-in-out",
       },
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;
