@@ -50,7 +50,7 @@ const Tools: React.FC<Props> = () => {
   // Implement your component logic here
   return (
     <section className="section-left relative flex items-center justify-center min-h-screen px-4 bg-gradient-to-br from-pink-100/95 to-indigo-100/95 py-24">
-      <div className="text-left my-auto select-none">
+      <div className="text-left my-auto select-none max-w-screen-xl">
         <h1 className="mt-[4rem] sm:ml-24 hero-main-text font-bold tracking-tight text-gray-900 mb-10">
           {responsiveHoverText("Some of the tools I like to use.")}
         </h1>

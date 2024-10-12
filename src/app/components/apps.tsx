@@ -63,7 +63,7 @@ const Apps: React.FC<Props> = () => {
   // Implement your component logic here
   return (
     <section className="section-left relative flex items-center justify-center min-h-screen px-4 bg-gradient-to-br from-emerald-100 to-indigo-200 py-24 pb-36">
-      <div className="text-left my-auto select-none">
+      <div className="text-left my-auto select-none max-w-screen-xl">
         <h1 className="mt-[4rem] hero-main-text font-bold tracking-tight text-gray-900 mb-10">
           {responsiveHoverText("Some apps that use my tooling.")}
         </h1>
