@@ -8,29 +8,28 @@ const squiggle1path =
 const Squiggle2: React.FC = () => {
   const squiggleRef = useRef<SVGSVGElement | null>(null);
   const pathRef = useRef<SVGPathElement | null>(null);
-  if (typeof window === "undefined") {
-    return;
-  }
-  const scroll = () => {
-    const svg = squiggleRef.current;
-    if (svg) {
-      const path = pathRef.current;
-      if (path) {
-        console.log("Path is valid");
-        const distance = window.scrollY;
-        const totalDistance = svg.clientHeight - window.innerHeight;
-        const percentage = distance / totalDistance;
+  if (typeof window !== "undefined") {
+    const scroll = () => {
+      const svg = squiggleRef.current;
+      if (svg) {
+        const path = pathRef.current;
+        if (path) {
+          console.log("Path is valid");
+          const distance = window.scrollY;
+          const totalDistance = svg.clientHeight - window.innerHeight;
+          const percentage = distance / totalDistance;
 
-        const pathLength = path.getTotalLength();
+          const pathLength = path.getTotalLength();
 
-        path.style.strokeDasharray = `${pathLength}`;
-        path.style.strokeDashoffset = `${pathLength * (1 - percentage)}`;
+          path.style.strokeDasharray = `${pathLength}`;
+          path.style.strokeDashoffset = `${pathLength * (1 - percentage)}`;
+        }
       }
-    }
-  };
-  scroll();
-  window.addEventListener("scroll", scroll);
-  window.addEventListener("resize", scroll);
+    };
+    scroll();
+    window.addEventListener("scroll", scroll);
+    window.addEventListener("resize", scroll);
+  }
 
   return (
     <div className="absolute w-full">
