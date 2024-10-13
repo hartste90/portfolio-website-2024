@@ -15,7 +15,6 @@ const Squiggle: React.FC = () => {
       if (svg) {
         const path = pathRef.current;
         if (path) {
-          console.log("Path is valid");
           const distance = window.scrollY;
           const totalDistance = svg.clientHeight - window.innerHeight;
           const percentage = distance / totalDistance;
