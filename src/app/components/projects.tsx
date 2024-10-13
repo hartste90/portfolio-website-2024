@@ -4,6 +4,7 @@ import ScrollAnimation from "react-animate-on-scroll";
 //images
 import tailwindLogo from "@images/tools/tailwind-icon.png";
 import appDiscovery from "@images/projects/app-discovery.jpeg";
+import ticketTracker from "@images/projects/ticket-tracker.jpeg";
 import dashboard from "@images/projects/dashboard.jpeg";
 import lionkit from "@images/projects/lionkit-diagram.jpeg";
 // import horsepower from '@images/projects/horsepower.mp4';
@@ -47,6 +48,14 @@ const projectData = [
     description:
       "A multiplatform application providing users with interfaces to buy, trade, train, and race digital horse racing assets.  The app focuses on modern UX principles and performance to deliver the best-in-class experinece for blockchain traders and horse racing enthusiasts.",
     technologies: "React, HTML, CSS, C#, Unity, UXML, Docker, MongoDB, AWS",
+  },
+  {
+    image: ticketTracker,
+    title: "Ticket Master SF",
+    company: "Rapidfire Studios",
+    description:
+      "A web application that connects users to buy, sell, and trade event tickets in the San Francisco Bay Area.  The app features a variety of event categories, and a user-friendly mobile interface for quick and easy ticket management.",
+    technologies: "React, Tailwind, NodeJS, AWS, GitLab",
   },
   {
     image: animationEventFinder,
@@ -97,12 +106,15 @@ const Projects: React.FC<Props> = () => {
 };
 
 const projectPanel: JSX.Element[] = projectData.map((project, index) => {
+  let hasBottomBorder = false; // index !== projectData.length - 1;
   return (
     <div
       key={project.title}
       className={`my-10 sm:mx-10  ${
-        index !== projectData.length - 1 ? "border-b-4 border-slate-600" : ""
-      } sm:flex flex-row pb-5 content-center items-center`}
+        hasBottomBorder
+          ? "border-b-4 border-slate-600"
+          : "" + (index % 2 === 0 ? "sm:translate-x-8" : "sm:-translatex-8")
+      } sm:flex flex-row content-center items-center bg-white rounded-xl shadow-lg px-10 py-20`}
     >
       {/* //desktop */}
       {project.image !== undefined && (
@@ -153,7 +165,7 @@ const projectPanel: JSX.Element[] = projectData.map((project, index) => {
 
       {/* //desktop */}
       <div className="hidden sm:flex p-1 px-4 w-1/2 text-left">
-        <Card className="border-none shadow-none h-full bg-gray-100/95">
+        <Card className="border-none shadow-none h-full bg-white">
           <CardHeader>
             <CardTitle>{project.title}</CardTitle>
             <CardDescription>{project.company}</CardDescription>

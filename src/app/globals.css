@@ -205,7 +205,7 @@ svg.squiggle2 path {
   stroke: pink;
   stroke-width: 1rem;
   stroke-linecap: round;
-  stroke-dashoffset: 5000;
+  /* stroke-dashoffset: 5000; */
 }
 
 .section-left {
