@@ -83,12 +83,23 @@ const projectData = [
   },
 ];
 
-const Projects: React.FC<Props> = () => {
+interface ProjectsProps {
+  className?: string;
+}
+
+const Projects: React.FC<ProjectsProps> = (props) => {
   return (
-    <section className="relative flex items-center justify-center">
+    <section
+      id="projects"
+      className={`relative flex items-center justify-center ${props.className}`}
+    >
       <div className="text-right my-auto select-none max-w-screen-xl">
-        <h1 className="mt-[4rem] hero-main-text font-bold tracking-tight text-gray-900 mb-10">
-          {responsiveHoverText("A few of my projects.")}
+        <h1 className="mt-[4rem] hero-main-text font-bold tracking-tight text-gray-900 mb-10 bg-white py-4 px-6">
+          {responsiveHoverText(
+            "A few of my projects.",
+            "text-red-300",
+            "text-green-400"
+          )}
         </h1>
         <ScrollAnimation
           animateIn="fadeInRight"
@@ -114,7 +125,7 @@ const projectPanel: JSX.Element[] = projectData.map((project, index) => {
         hasBottomBorder
           ? "border-b-4 border-slate-600"
           : "" + (index % 2 === 0 ? "sm:translate-x-8" : "sm:-translatex-8")
-      } sm:flex flex-row content-center items-center bg-white rounded-xl shadow-lg px-10 py-20`}
+      } sm:flex flex-row content-center items-center bg-white shadow-lg px-10 py-20`}
     >
       {/* //desktop */}
       {project.image !== undefined && (

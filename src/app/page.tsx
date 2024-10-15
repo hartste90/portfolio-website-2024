@@ -35,25 +35,25 @@ export default function Home() {
   return (
     <>
       <ContactMeSheet className="absolute top-5 right-5 z-20" />
-      <div>
-        <Squiggle2 />
-        <Squiggle />
-      </div>
+
       <Hero />
-      <Tools />
-      <Projects />
+      <Tools className="z-6" />
+      <Projects className="z-6" />
       <Apps />
-      <div className="flex items-center justify-center w-full h-80">
+      <div className="flex items-center justify-center w-full">
         <ContactMeSheet />
       </div>
       <Toaster />
-      {/* <Squiggle /> */}
-      <footer className="flex items-center justify-center h-10 py-8 bg-gradient-to-b from-pink-100 to-white text-slate-400">
-        <a className="mx-3 text-center">
+      <footer className="absolute w-full flex items-center justify-center h-10 py-8">
+        <div className="relative rounded-full text-center px-3 py-1 text-xs leading-6 text-cyan-100 ring-1 ring-cyan-900/50 hover:ring-cyan-900/70 my-8">
           {`this website was handcrafted by `}
           <span className="italic">Steve Hart</span>
-        </a>
+        </div>
       </footer>
+      <div className="invisible md:visible absolute top-0 left-0 w-full z-3">
+        <Squiggle2 />
+        <Squiggle />
+      </div>
     </>
   );
 }

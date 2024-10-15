@@ -44,9 +44,6 @@ const Squiggle: React.FC = () => {
           <path
             ref={pathRef}
             d={squiggle1path}
-            stroke="#CD3C2F"
-            stroke-width="30"
-            stroke-linejoin="round"
             style={{ strokeDasharray: "5250", strokeDashoffset: "5300" }}
           />
         </g>

@@ -42,13 +42,10 @@ const Squiggle2: React.FC = () => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_5_2)">
+        <g clipPath="url(#clip0_5_2)">
           <path
             ref={pathRef}
             d={squiggle1path}
-            stroke="#CD3C2F"
-            stroke-width="30"
-            stroke-linejoin="round"
             style={{ strokeDasharray: "18000", strokeDashoffset: "18000" }}
           />
         </g>

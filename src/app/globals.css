@@ -165,7 +165,7 @@
 
 .hero-main-text {
   display: inline-block;
-  text-shadow: 3px 3px #558abb;
+  text-shadow: 3px 3px #000;
 }
 
 .lift-on-hover {
@@ -197,12 +197,12 @@ svg.squiggle {
 }
 
 svg.squiggle path {
-  stroke: purple;
+  stroke: black;
   stroke-width: 0.5rem;
   stroke-linecap: round;
 }
 svg.squiggle2 path {
-  stroke: pink;
+  stroke: white;
   stroke-width: 1rem;
   stroke-linecap: round;
   /* stroke-dashoffset: 5000; */
@@ -213,6 +213,13 @@ svg.squiggle2 path {
   clip-path: none;
   justify-content: center;
   /* background-color: blue; */
+}
+
+canvas#bg {
+  position: fixed;
+  /* background-color: #f1ede9; */
+  top: 0;
+  left: 0;
 }
 
 @media only screen and (min-width: 640px) {

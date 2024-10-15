@@ -20,6 +20,7 @@ import ScrollAnimation from "react-animate-on-scroll";
 import Section from "@/app/components/section";
 import { responsiveHoverText } from "./responsive-hover-text";
 import ContactMeSheet from "./contact-me-sheet";
+import { ScrollingBackground } from "./scrolling-background/scrolling-background";
 
 // const navigation = [
 //   { name: 'Services', href: '#' },
@@ -30,7 +31,12 @@ import ContactMeSheet from "./contact-me-sheet";
 export default function Hero() {
   return (
     <div className="bg-white">
-      <header className="absolute inset-x-0 top-0 z-50">
+      <ScrollingBackground
+        setMilestone={() => {
+          console.log("hit milestone");
+        }}
+      />
+      <header className="absolute inset-x-0 top-0 z-10">
         <nav className="flex items-start lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
@@ -53,12 +59,13 @@ export default function Hero() {
           </div>
         </nav>
       </header>
+
       <div className="relative isolate px-6 h-full lg:px-8">
         <div
           className="absolute inset-x-0 -z-10 transform-gpu overflow-clip sm:-top-80"
           aria-hidden="true"
         >
-          <div className="rotate animate-spin-slow blur-xl">
+          {/* <div className="rotate animate-spin-slow blur-xl">
             <div
               // className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2  bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem] blob1 blur-3xl"
               className=" aspect-[1155/678] w-[36.125rem] -translate-x-1/2  bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem] blob1"
@@ -69,7 +76,7 @@ export default function Hero() {
               // className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2  bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem] blob1 blur-3xl"
               className=" aspect-[1155/678] w-[36.125rem] -translate-x-1/2  bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem] blob1"
             />
-          </div>
+          </div> */}
         </div>
         <div className="mx-auto max-w-2xl pt-32 md:pt-28 fade">
           <img
@@ -78,7 +85,7 @@ export default function Hero() {
             alt=""
           />
           <div className="sm:mb-8 sm:flex sm:justify-center">
-            <div className="relative rounded-full text-center px-3 py-1 text-xs leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20 my-8">
+            <div className="relative rounded-full text-center px-3 py-1 text-xs leading-6 text-cyan-100 ring-1 ring-cyan-900/50 hover:ring-cyan-900/70 my-8">
               Hi I'm Steve. A modern full-stack developer.{" "}
               {/* <a href="#" className="font-semibold text-indigo-600">
                     <span className="absolute inset-0" aria-hidden="true" />
@@ -87,7 +94,7 @@ export default function Hero() {
             </div>
           </div>
           <div className="text-center mb-10">
-            <h1 className="hero-main-text font-bold tracking-tight text-gray-900 -z-100">
+            <h1 className="hero-main-text font-bold tracking-tight text-cyan-100 -z-100">
               {responsiveHoverText(
                 "I use code to create moments of impact and delight."
               )}
