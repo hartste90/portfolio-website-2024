@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { render } from "react-dom";
 var FBXLoader = require("three-fbx-loader");
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
