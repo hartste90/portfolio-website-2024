@@ -94,12 +94,8 @@ const Projects: React.FC<ProjectsProps> = (props) => {
       className={`relative flex items-center justify-center ${props.className}`}
     >
       <div className="text-right my-auto select-none max-w-screen-xl">
-        <h1 className="mt-[4rem] hero-main-text font-bold tracking-tight text-gray-900 mb-10 bg-white py-4 px-6">
-          {responsiveHoverText(
-            "A few of my projects.",
-            "text-red-300",
-            "text-green-400"
-          )}
+        <h1 className="mt-[4rem] hero-main-text text-shadow-dark font-bold tracking-tight text-vaporwave-900 mb-10 bg-white py-4 px-6">
+          {responsiveHoverText("A few of my projects.")}
         </h1>
         <ScrollAnimation
           animateIn="fadeInRight"

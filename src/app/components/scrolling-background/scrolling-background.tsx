@@ -75,7 +75,7 @@ export const ScrollingBackground: React.FC<ScrollingBackgroundProps> = ({
     function addFloor() {
       const geometry = new THREE.PlaneGeometry(1000, 1000, 100, 100);
       const material = new THREE.MeshBasicMaterial({
-        color: 0xffffff,
+        color: 0xe368da,
         wireframe: true,
       });
       const floor = new THREE.Mesh(geometry, material);

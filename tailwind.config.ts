@@ -55,6 +55,18 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        vaporwave: {
+          "50": "#a4a7ea",
+          "100": "#a790d9",
+          "200": "#ae8bd9",
+          "300": "#b686d9",
+          "400": "#bd81d9",
+          "500": "#c57cd9",
+          "600": "#cc77d9",
+          "700": "#d472d9",
+          "800": "#db6dd9",
+          "900": "#e368da",
+        },
       },
       zIndex: {
         "1": "1",

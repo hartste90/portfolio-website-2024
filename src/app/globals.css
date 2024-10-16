@@ -165,7 +165,14 @@
 
 .hero-main-text {
   display: inline-block;
+}
+
+.text-shadow-dark {
   text-shadow: 3px 3px #000;
+}
+
+.text-shadow-light {
+  text-shadow: 3px 3px #fff;
 }
 
 .lift-on-hover {

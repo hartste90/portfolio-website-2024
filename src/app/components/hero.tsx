@@ -94,7 +94,7 @@ export default function Hero() {
             </div>
           </div>
           <div className="text-center mb-10">
-            <h1 className="hero-main-text font-bold tracking-tight text-cyan-100 -z-100">
+            <h1 className="hero-main-text text-shadow-dark font-bold tracking-tight text-cyan-100 -z-100">
               {responsiveHoverText(
                 "I use code to create moments of impact and delight."
               )}

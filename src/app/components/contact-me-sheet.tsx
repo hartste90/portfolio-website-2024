@@ -29,8 +29,8 @@ const ContactMeSheet: React.FC<ContactMeSheetProps> = (props) => {
         >
           Get in touch
         </SheetTrigger>
-        <SheetContent>
-          <SheetHeader className="mt-5">
+        <SheetContent className="bg-black">
+          <SheetHeader className=" mt-5">
             <SheetTitle
               // className='text-xl text-indigo-600 my-4 pb-4 justify-center content-center'>
               className={`text-md font-semibold bg-gradient-to-r inline-block text-transparent bg-clip-text from-pink-500 to-indigo-500`}
