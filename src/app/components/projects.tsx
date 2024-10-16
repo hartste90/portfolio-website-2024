@@ -60,9 +60,9 @@ const projectData = [
   {
     image: animationEventFinder,
     title: "Animation Event Finder",
-    company: "Open Source",
+    company: "Rapidfire Studios",
     description:
-      "A public project I began to increase the observability between interactive animations and scripting.  Includes the ability to search for scripts called during animations and view information about them from a debug modal without having to drill into the animation framework.",
+      "Increases the observability between interactive animations and scripting inside the Unity Engine.  Includes the ability to search for scripts called during animations and view information about them from a debug modal without having to drill into the animation framework.",
     technologies: "C#, CSS, Unity",
   },
   {
