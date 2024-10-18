@@ -57,7 +57,7 @@ const Tools: React.FC<ToolsProps> = (props) => {
       className={`section-left relative flex items-center justify-center min-h-screen px-4 bg-gradient-to-br from-vaporwave-50 to-vaporwave-300/95 py-24 ${props.className}`}
     >
       <div className="text-left my-auto select-none max-w-screen-xl">
-        <h1 className="mt-[4rem] sm:ml-24 hero-main-text text-shadow-dark font-bold tracking-tight text-cyan-100 mb-10 bg-black pl-10 pr-2 py-2">
+        <h1 className="mt-[4rem] sm:ml-24 hero-main-text text-shadow-dark font-bold tracking-tight text-cyan-100 mb-10 bg-black py-4 px-6 rounded-full border-2">
           {responsiveHoverText("Some of the tools I like to use.")}
         </h1>
         <div className="flex flex-row flex-wrap justify-center basis-1/2 mx-20">
