@@ -39,7 +39,6 @@ export const ScrollingBackground: React.FC<ScrollingBackgroundProps> = ({
       renderer.render(scene, camera);
 
       let scroll = () => {
-        console.log("scrolling so rendering");
         camera.position.z = 30 + window.scrollY * 0.1;
         renderer.render(scene, camera);
       };
@@ -204,7 +203,7 @@ export const ScrollingBackground: React.FC<ScrollingBackgroundProps> = ({
 
   return (
     <div>
-      <canvas className="z-0" id="bg">
+      <canvas className="z-0 dimmed" id="bg">
         {" "}
       </canvas>
     </div>

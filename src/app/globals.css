@@ -175,6 +175,10 @@
   text-shadow: 3px 3px #fff;
 }
 
+.dimmed {
+  filter: brightness(70%);
+}
+
 .lift-on-hover {
   transition-property: color, background-color, border-color,
     text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
