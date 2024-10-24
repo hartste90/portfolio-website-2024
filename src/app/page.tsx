@@ -13,6 +13,9 @@ import Apps from "./components/apps";
 import ContactMeSheet from "./components/contact-me-sheet";
 import Squiggle from "./components/squiggle";
 import Squiggle2 from "./components/squiggle2";
+import { useEffect, useRef } from "react";
+import LocomotiveScroll from "locomotive-scroll";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -32,6 +35,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 export default function Home() {
+  useEffect(() => {
+    const scroll = new LocomotiveScroll();
+  });
   return (
     <>
       <ContactMeSheet className="absolute top-5 right-5 z-20" />
