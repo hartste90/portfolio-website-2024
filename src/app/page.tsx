@@ -15,6 +15,7 @@ import Squiggle from "./components/squiggle";
 import Squiggle2 from "./components/squiggle2";
 import { useEffect, useRef } from "react";
 import LocomotiveScroll from "locomotive-scroll";
+import Confetti from "./confetti";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -41,7 +42,7 @@ export default function Home() {
   return (
     <>
       <ContactMeSheet className="absolute top-5 right-5 z-20" />
-
+      {/* <Confetti /> */}
       <Hero />
       <Tools className="z-6" />
       <Projects className="z-6" />

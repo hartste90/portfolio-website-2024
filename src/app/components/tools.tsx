@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { responsiveHoverText } from "./responsive-hover-text";
-import ScrollAnimation from "react-animate-on-scroll";
+// import ScrollAnimation from "react-animate-on-scroll";
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 //images
 import tailwindLogo from "@images/tools/tailwind-icon.png";
 import reactLogo from "@images/tools/react-icon.png";
@@ -50,18 +52,39 @@ interface ToolsProps {
   className?: string;
 }
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Tools: React.FC<ToolsProps> = (props) => {
-  // Implement your component logic here
+  useEffect(() => {
+    gsap.utils.toArray(".tool").forEach((tool, index) => {
+      let target = tool as gsap.TweenTarget;
+      gsap.set(target, { x: 0, opacity: 1 });
+      gsap.from(target, {
+        scrollTrigger: {
+          trigger: target as gsap.DOMTarget,
+          start: "top bottom",
+          end: "top center",
+          // scrub: true,
+          // markers: true,
+        },
+        delay: index * 0.1,
+        opacity: 0,
+        x: -50,
+        ease: "none",
+        duration: 0.25,
+      });
+    }, []);
+  }, []);
+
   return (
     <section
-      className={`section-left relative flex items-center justify-center min-h-screen px-4 bg-gradient-to-br from-vaporwave-50 to-vaporwave-300/95 py-24 ${props.className}`}
+      data-scroll-section
+      data-scroll
+      data-scroll-speed="0.5"
+      className={`tool-animation-trigger section-left relative flex items-center justify-center min-h-screen px-4 bg-black bg-opacity-0  from-vaporwave-50 to-vaporwave-300/95 py-24 ${props.className}`}
     >
-      <div
-        data-scroll
-        data-scroll-speed="0.3"
-        className="text-left my-auto select-none max-w-screen-xl"
-      >
-        <h1 className="mt-[4rem] sm:ml-24 hero-main-text text-shadow-dark font-bold tracking-tight text-cyan-100 mb-10 bg-black py-4 px-6 rounded-full border-2">
+      <div className="text-left my-auto select-none max-w-screen-xl">
+        <h1 className="mt-[4rem] sm:ml-24 hero-main-text text-shadow-dark font-bold tracking-tight text-cyan-100 mb-10 bg-black bg-opacity-70 py-4 px-20 title-clip">
           {responsiveHoverText("Some of the tools I like to use.")}
         </h1>
         <div className="flex flex-row flex-wrap justify-center basis-1/2 mx-20">
@@ -73,21 +96,13 @@ const Tools: React.FC<ToolsProps> = (props) => {
 };
 
 const toolPanel = function () {
-  const rowLength = 20;
-  let rows: React.JSX.Element[] = [];
-  let row: React.JSX.Element[] = [];
-  let rowNum = 1;
+  let tools: React.JSX.Element[] = [];
   toolData.forEach((tool, index) => {
     const toolElement = (
-      <ScrollAnimation
-        key={index}
-        animateIn="fadeInLeft"
-        initiallyVisible={false}
-        animateOnce={true}
-        delay={50 * index}
-        animatePreScroll={true}
-      >
-        <div className={`m-3 lift-on-hover  border-b-4 border-slate-600`}>
+      <div key={`${tool}+${index}`}>
+        <div
+          className={`tool m-3 lift-on-hover opacity-20 border-b-4 border-slate-600`}
+        >
           <img
             src={
               typeof tool.image === "string"
@@ -99,34 +114,22 @@ const toolPanel = function () {
             className="w-20 h-20 content-center mx-auto mb-5"
           />
           <div className=" p-1 px-4">
-            <p className="text-xl text-center text-slate-700">{tool.text}</p>
+            <p className="text-xl text-center text-white">{tool.text}</p>
           </div>
         </div>
-      </ScrollAnimation>
-    );
-
-    if (row.length < rowLength) {
-      row.push(toolElement);
-    } else {
-      rows.push(
-        <div key={index} className="flex m-1 flex-row flex-wrap justify-center">
-          {row}
-        </div>
-      );
-      rowNum++;
-      row = [];
-      row.push(toolElement);
-    }
-  });
-  if (row.length > 0) {
-    rows.push(
-      <div key="lastRow" className="flex m-1 flex-row flex-wrap justify-center">
-        {row}
       </div>
     );
-  }
+    tools.push(toolElement);
+  });
 
-  return <div className="block">{rows}</div>;
+  return (
+    <div
+      key="lastRow"
+      className="tool-row flex m-1 flex-row flex-wrap justify-center"
+    >
+      {tools}
+    </div>
+  );
 };
 
 export default Tools;

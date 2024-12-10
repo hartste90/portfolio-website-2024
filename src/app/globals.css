@@ -226,6 +226,9 @@ svg.squiggle2 path {
   /* background-color: blue; */
 }
 
+.title-clip {
+  clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+}
 canvas#bg {
   position: fixed;
   /* background-color: #f1ede9; */

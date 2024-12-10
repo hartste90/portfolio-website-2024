@@ -36,6 +36,7 @@ export const ScrollingBackground: React.FC<ScrollingBackgroundProps> = ({
         250
       );
       camera.position.setZ(30);
+      camera.rotateX(0.5);
       renderer.render(scene, camera);
 
       let scroll = () => {
@@ -97,7 +98,6 @@ export const ScrollingBackground: React.FC<ScrollingBackgroundProps> = ({
 
       window.addEventListener("click", changeColor);
       window.addEventListener("scroll", () => {
-        console.log("scrolling so rendering");
         renderer.render(scene, camera);
       });
     }
