@@ -30,8 +30,9 @@ import lifeSimulatorIcon from "@images/game-icons/Life-Simulator-Icon.webp";
 import loveBallsIcon from "@images/game-icons/Love-Balls-Icon.webp";
 import magicChanceIcon from "@images/game-icons/Magic-Chance-Icon.jpeg";
 
-interface Props {
+interface AppsProps {
   // Define the props for your component here
+  className?: string;
 }
 
 const appData = [
@@ -59,26 +60,23 @@ const appData = [
   { image: magicChanceIcon, text: "Magic Chance" },
 ];
 
-const Apps: React.FC<Props> = () => {
-  // Implement your component logic here
+const Apps: React.FC<AppsProps> = (props) => {
   return (
-    <section className="section-left relative flex items-center justify-center min-h-screen px-4 bg-gradient-to-br from-emerald-100 to-indigo-200 py-24 pb-36">
+    <section
+      data-scroll-section
+      data-scroll
+      data-scroll-speed="0.5"
+      className={`tool-animation-trigger section-left relative flex items-center justify-center min-h-screen px-4 bg-black bg-opacity-0  from-vaporwave-50 to-vaporwave-300/95 py-24 ${props.className}`}
+    >
       <div className="text-left my-auto select-none max-w-screen-xl">
-        <h1 className="mt-[4rem] hero-main-text text-shadow-dark font-bold tracking-tight text-white mb-10 bg-black py-4 px-6 rounded-full border-2">
+        <h1 className="mt-[4rem] sm:ml-24 hero-main-text text-shadow-dark font-bold tracking-tight text-cyan-100 mb-10 bg-black bg-opacity-70 py-4 px-20 title-clip">
           {responsiveHoverText("Some apps that use my tooling.")}
         </h1>
-        <div className="flex flex-row flex-wrap justify-center basis-1/2">
+        <div className="flex flex-row flex-wrap justify-center basis-1/2 mx-20">
           {appPanel()}
-          <ScrollAnimation
-            animateIn="fadeInLeft"
-            initiallyVisible={false}
-            animateOnce={true}
-            animatePreScroll={true}
-          >
-            <div className=" italic text-xl text-slate-500 pt-10">
-              ~ and many more ~
-            </div>
-          </ScrollAnimation>
+          <div className=" italic text-xl text-slate-100 pt-10">
+            ~ and many more ~{" "}
+          </div>
         </div>
       </div>
     </section>
@@ -107,7 +105,7 @@ const appPanel = function () {
           className="w-24 h-24 content-center mx-auto mb-5 rounded-xl"
         />
         <div className=" p-1 px-4">
-          <p className="text-xl text-center text-slate-700">{tool.text}</p>
+          <p className="text-xl text-center text-slate-100">{tool.text}</p>
         </div>
       </div>
     );
