@@ -32,7 +32,7 @@ const Squiggle: React.FC = () => {
   }
 
   return (
-    <div className="absolute w-full">
+    <div className="absolute w-full pointer-events-none">
       <svg
         ref={squiggleRef}
         className="squiggle"
