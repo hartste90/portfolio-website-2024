@@ -90,10 +90,7 @@ const appPanel = function () {
   let rowNum = 1;
   appData.forEach((tool, index) => {
     const appElement = (
-      <div
-        key={`${tool}-${index}`}
-        className={`sm:mx-10 lift-on-hover my-4 inline-block`}
-      >
+      <div key={`${tool}-${index}`} className={`sm:mx-10 my-4 inline-block`}>
         <img
           src={
             typeof tool.image === "string"
