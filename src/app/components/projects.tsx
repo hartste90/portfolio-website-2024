@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { responsiveHoverText } from "./responsive-hover-text";
-import ScrollAnimation from "react-animate-on-scroll";
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 //images
 import tailwindLogo from "@images/tools/tailwind-icon.png";
 import appDiscovery from "@images/projects/app-discovery.jpeg";
@@ -87,7 +88,29 @@ interface ProjectsProps {
   className?: string;
 }
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Projects: React.FC<ProjectsProps> = (props) => {
+  useEffect(() => {
+    gsap.fromTo(
+      ".project-panel",
+      {
+        opacity: 0,
+        x: -200,
+        ease: "none",
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 1.25,
+        scrollTrigger: {
+          trigger: ".project-panel",
+          start: "top bottom-=25%",
+        },
+      }
+    );
+  }, []);
+
   return (
     <section
       id="projects"
@@ -97,16 +120,9 @@ const Projects: React.FC<ProjectsProps> = (props) => {
         <h1 className="mt-[4rem] title-clip hero-main-text text-shadow-dark font-bold tracking-tight text-vaporwave-900 mb-10 bg-white py-4 px-6 border-2 border-black">
           {responsiveHoverText("A few of my projects.")}
         </h1>
-        <ScrollAnimation
-          animateIn="fadeInRight"
-          initiallyVisible={false}
-          animateOnce={true}
-          animatePreScroll={true}
-        >
-          <div className="flex flex-row flex-wrap justify-center basis-1/2">
-            {projectPanel}
-          </div>
-        </ScrollAnimation>
+        <div className="project-panel flex flex-row flex-wrap justify-center basis-1/2 opacity-100">
+          {projectPanel}
+        </div>
       </div>
     </section>
   );

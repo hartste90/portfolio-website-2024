@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { responsiveHoverText } from "./responsive-hover-text";
-import ScrollAnimation from "react-animate-on-scroll";
 //import all images in game-icons folder
 import reactLogo from "@images/game-icons/Airport-Billion-Air-Icon.webp";
 import ancientBattleIcon from "@images/game-icons/Ancient-Battle-Icon.webp";

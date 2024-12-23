@@ -51,8 +51,8 @@ export default function Home() {
         <ContactMeSheet />
       </div>
       <Toaster />
-      <footer className="absolute w-full flex items-center justify-center h-10 py-8">
-        <div className="relative rounded-full text-center px-3 py-1 text-xs leading-6 text-cyan-100 ring-1 ring-cyan-900/50 hover:ring-cyan-900/70 my-8">
+      <footer className="absolute w-full flex items-center justify-center h-10 py-8 select-none">
+        <div className="relative rounded-full text-center px-3 py-1 text-xs leading-6 text-cyan-100 ring-1 ring-cyan-900/50 hover:ring-cyan-900/70 my-8 ">
           {`this website was handcrafted by `}
           <span className="italic">Steve Hart</span>
         </div>

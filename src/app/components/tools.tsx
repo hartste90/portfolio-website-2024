@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { responsiveHoverText } from "./responsive-hover-text";
-// import ScrollAnimation from "react-animate-on-scroll";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 //images
@@ -64,8 +63,6 @@ const Tools: React.FC<ToolsProps> = (props) => {
           trigger: target as gsap.DOMTarget,
           start: "top bottom",
           end: "top center",
-          // scrub: true,
-          // markers: true,
         },
         delay: index * 0.1,
         opacity: 0,

@@ -15,9 +15,7 @@ interface ScrollingBackgroundProps {
   setMilestone: (milestone: number) => void;
 }
 
-export const ScrollingBackground: React.FC<ScrollingBackgroundProps> = ({
-  setMilestone,
-}) => {
+export const ScrollingBackground: React.FC = ({}) => {
   useEffect(() => {
     const scene = new THREE.Scene();
 
