@@ -60,7 +60,7 @@ const ContactMeSheet: React.FC<ContactMeSheetProps> = (props) => {
             <SidePageLink
               icon={<Github className="inline" />}
               title="Github"
-              url="https://github.com/hartste90"
+              url="https://github.com/stevenhart"
             />
             <SidePageLink
               icon={<Linkedin className="inline" />}
@@ -70,7 +70,7 @@ const ContactMeSheet: React.FC<ContactMeSheetProps> = (props) => {
             <SidePageLink
               icon={<File className="inline" />}
               title="Resume"
-              url="https://github.com/hartste90/portfolio-website-2024/blob/main/documents/StevenHart-Resume.pdf"
+              url="https://github.com/stevenhart/portfolio-website-2024/blob/main/documents/StevenHart-Resume.pdf"
             />
           </SheetHeader>
         </SheetContent>
